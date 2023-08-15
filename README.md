@@ -11,7 +11,7 @@ If you use this software, please cite it as below.
 ```
 @software{Junhua_Object_Oriented_Programming_2023,
 author = {Junhua, Liu},
-title = {{Object Oriented Programming (April 2023) by Goldsmith, University of London}},
+title = {{CM2005: Object Oriented Programming by Goldsmith, University of London}},
 version = {1.0.0},
 month = {August},
 year = {2023}
