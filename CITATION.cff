@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this material, please cite it as below."
 authors:
-  - family-names: Junhua
-    given-names: Liu
-title: "Object Oriented Programming by Goldsmith, University of London April 2023"
+  - family-names: Liu
+    given-names: Junhua
+title: "CM2005: Object Oriented Programming by Goldsmith, University of London"
 version: 1.0.0
 date-released: 2023-08-15
