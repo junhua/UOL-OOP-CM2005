@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+
+            "includePath": [
+                "${workspaceFolder}/**", 
+                "/home/scratch/src/juce/JUCE/modules/"
+            ],
+
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "${workspaceFolder}/**", 
+                    "/home/scratch/src/juce/JUCE/modules/**"
+                ]
+            },
+           "defines": [],
+            "compilerPath": "/usr/bin/clang-6.0",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
