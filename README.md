@@ -9,8 +9,8 @@ The tutorial can be found at: [link](https://simgejl.notion.site/CM2005-OOP-Apr-
 If you use this software, please cite it as below.
 
 ```
-@software{Junhua_Object_Oriented_Programming_2023,
-author = {Junhua, Liu},
+@software{Liu_CM2005_Object_Oriented_2023,
+author = {Liu, Junhua},
 title = {{CM2005: Object Oriented Programming by Goldsmith, University of London}},
 version = {1.0.0},
 month = {August},
