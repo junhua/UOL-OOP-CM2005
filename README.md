@@ -1,4 +1,4 @@
-# UOL-OOP-APR2023
+# UOL-OOP-OCT2023
 
 This repository is the teaching material for the Object Oriented Programming (Apr 2023) offered by Goldsmith, University of London.
 
