@@ -1,5 +1,6 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2019
+# Visual Studio Version 16
 
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OtoDecks - App", "OtoDecks_App.vcxproj", "{A94724C6-EA96-07E2-B296-2EF2CD4B392E}"
 EndProject

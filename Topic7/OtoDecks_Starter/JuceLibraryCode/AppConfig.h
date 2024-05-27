@@ -23,12 +23,12 @@
 /*
   ==============================================================================
 
-   In accordance with the terms of the JUCE 5 End-Use License Agreement, the
+   In accordance with the terms of the JUCE 7 End-Use License Agreement, the
    JUCE Code in SECTION A cannot be removed, changed or otherwise rendered
    ineffective unless you have a JUCE Indie or Pro license, or are using JUCE
    under the GPL v3 license.
 
-   End User License Agreement: www.juce.com/juce-5-licence
+   End User License Agreement: www.juce.com/juce-7-licence
 
   ==============================================================================
 */
@@ -39,15 +39,11 @@
  #define JUCE_DISPLAY_SPLASH_SCREEN 1
 #endif
 
-#ifndef JUCE_REPORT_APP_USAGE
- #define JUCE_REPORT_APP_USAGE 1
-#endif
-
 // END SECTION A
 
 #define JUCE_USE_DARK_SPLASH_SCREEN 1
 
-#define JUCE_PROJUCER_VERSION 0x50405
+#define JUCE_PROJUCER_VERSION 0x70009
 
 //==============================================================================
 #define JUCE_MODULE_AVAILABLE_juce_audio_basics          1
@@ -82,10 +78,6 @@
  //#define JUCE_WASAPI 1
 #endif
 
-#ifndef    JUCE_WASAPI_EXCLUSIVE
- //#define JUCE_WASAPI_EXCLUSIVE 0
-#endif
-
 #ifndef    JUCE_DIRECTSOUND
  //#define JUCE_DIRECTSOUND 1
 #endif
@@ -103,7 +95,11 @@
 #endif
 
 #ifndef    JUCE_USE_ANDROID_OBOE
- //#define JUCE_USE_ANDROID_OBOE 0
+ //#define JUCE_USE_ANDROID_OBOE 1
+#endif
+
+#ifndef    JUCE_USE_OBOE_STABILIZED_CALLBACK
+ //#define JUCE_USE_OBOE_STABILIZED_CALLBACK 0
 #endif
 
 #ifndef    JUCE_USE_ANDROID_OPENSLES
@@ -154,6 +150,18 @@
 
 #ifndef    JUCE_PLUGINHOST_LADSPA
  //#define JUCE_PLUGINHOST_LADSPA 0
+#endif
+
+#ifndef    JUCE_PLUGINHOST_LV2
+ //#define JUCE_PLUGINHOST_LV2 0
+#endif
+
+#ifndef    JUCE_PLUGINHOST_ARA
+ //#define JUCE_PLUGINHOST_ARA 0
+#endif
+
+#ifndef    JUCE_CUSTOM_VST3_SDK
+ //#define JUCE_CUSTOM_VST3_SDK 0
 #endif
 
 //==============================================================================
@@ -210,6 +218,10 @@
  #define   JUCE_STRICT_REFCOUNTEDPOINTER 1
 #endif
 
+#ifndef    JUCE_ENABLE_ALLOCATION_HOOKS
+ //#define JUCE_ENABLE_ALLOCATION_HOOKS 0
+#endif
+
 //==============================================================================
 // juce_dsp flags:
 
@@ -236,8 +248,8 @@
 //==============================================================================
 // juce_events flags:
 
-#ifndef    JUCE_EXECUTE_APP_SUSPEND_ON_IOS_BACKGROUND_TASK
- //#define JUCE_EXECUTE_APP_SUSPEND_ON_IOS_BACKGROUND_TASK 0
+#ifndef    JUCE_EXECUTE_APP_SUSPEND_ON_BACKGROUND_TASK
+ //#define JUCE_EXECUTE_APP_SUSPEND_ON_BACKGROUND_TASK 0
 #endif
 
 //==============================================================================
@@ -291,6 +303,10 @@
 
 #ifndef    JUCE_WEB_BROWSER
  //#define JUCE_WEB_BROWSER 1
+#endif
+
+#ifndef    JUCE_USE_WIN_WEBVIEW2
+ //#define JUCE_USE_WIN_WEBVIEW2 0
 #endif
 
 #ifndef    JUCE_ENABLE_LIVE_CONSTANT_EDITOR

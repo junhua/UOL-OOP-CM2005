@@ -80,6 +80,6 @@ void MainComponent::resized()
     button.setBounds(0,0,getWidth(), getHeight()/2);
 }
 
-void MainComponent::buttonClicked(<#juce::Button *#>) {
+void MainComponent::buttonClicked(juce::Button btn) {
     std::cout << "Button was clicked" << std::endl;
 }

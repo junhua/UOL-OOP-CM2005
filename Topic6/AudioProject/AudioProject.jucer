@@ -4,6 +4,7 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="iUKwGJ" name="AudioProject">
     <GROUP id="{DB20857E-116C-F140-7130-32582B3123D4}" name="Source">
+      <FILE id="nNrK6E" name="logo.png" compile="0" resource="1" file="../../../../../Desktop/logo.png"/>
       <FILE id="XYeTnj" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="QY2P7u" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="ZA9k3B" name="MainComponent.cpp" compile="1" resource="0"
