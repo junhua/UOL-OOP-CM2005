@@ -13,7 +13,7 @@ If you use this software, please cite it as below.
 ```
 @software{Liu_CM2005_Object_Oriented_2023,
 author = {Liu, Junhua},
-title = {{CM2005: Object Oriented Programming by Goldsmith, University of London}},
+title = {{CM2005: Object Oriented Programming Lecture Notes and Source Code}},
 version = {1.0.0},
 month = {August},
 year = {2023}
