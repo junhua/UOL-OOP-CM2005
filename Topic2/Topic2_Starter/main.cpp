@@ -9,11 +9,11 @@ void printMenu()
     std::cout << "2: Print exchange stats" << std::endl;
     // 3 make an offer
     std::cout << "3: Make an offer " << std::endl;
-    // 4 make a bid 
+    // 4 make a bid
     std::cout << "4: Make a bid " << std::endl;
     // 5 print wallet
     std::cout << "5: Print wallet " << std::endl;
-    // 6 continue   
+    // 6 continue
     std::cout << "6: Continue " << std::endl;
 
     std::cout << "============== " << std::endl;
@@ -24,7 +24,7 @@ void printHelp()
     std::cout << "Help - your aim is to make money. Analyse the market and make bids and offers. " << std::endl;
 }
 
-void  printMarketStats()
+void printMarketStats()
 {
     std::cout << "Market looks good. " << std::endl;
 }
@@ -43,12 +43,12 @@ void printWallet()
 {
     std::cout << "Your wallet is empty. " << std::endl;
 }
-        
+
 void gotoNextTimeframe()
 {
     std::cout << "Going to next time frame. " << std::endl;
 }
- 
+
 int getUserOption()
 {
     int userOption;
@@ -88,11 +88,11 @@ void processUserOption(int userOption)
     if (userOption == 6) // bad input
     {
         gotoNextTimeframe();
-    }       
+    }
 }
 
 int main()
-{    
+{
     while (true)
     {
         printMenu();
@@ -101,4 +101,3 @@ int main()
     }
     return 0;
 }
-

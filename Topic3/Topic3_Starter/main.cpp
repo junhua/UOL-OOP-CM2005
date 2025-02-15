@@ -7,6 +7,5 @@
 int main()
 {   
     MerkelMain app{};
-    app.init();
-   
+    app.init();  
 }

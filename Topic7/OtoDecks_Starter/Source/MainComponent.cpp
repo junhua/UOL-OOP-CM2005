@@ -29,7 +29,9 @@ MainComponent::MainComponent()
     }
 
     addAndMakeVisible(playButton);
-    addAndMakeVisible(volSlider);    
+    addAndMakeVisible(volSlider);
+    
+    playButton.addListener(this);
 }
 
 MainComponent::~MainComponent()
@@ -73,9 +75,11 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
     double rowH = getHeight() / 5; 
-    playButton.setBounds(0, 0, getWidth(), rowH);    
+    playButton.setBounds(getWidth()/2, 0, getWidth()/2, rowH);
     volSlider.setBounds(0, rowH * 2, getWidth(), rowH);
 
 }
 
-
+void MainComponent::buttonClicked(Button * button){
+    std::cout << "Button Clicked" << std::endl;
+}

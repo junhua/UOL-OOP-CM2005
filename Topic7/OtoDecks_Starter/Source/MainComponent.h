@@ -15,7 +15,7 @@
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
-class MainComponent   : public AudioAppComponent
+class MainComponent   : public AudioAppComponent, public Button::Listener
 {
 public:
     //==============================================================================
@@ -30,6 +30,8 @@ public:
     //==============================================================================
     void paint (Graphics& g) override;
     void resized() override;
+    
+    void buttonClicked(Button *) override;
 
 private:
     //==============================================================================

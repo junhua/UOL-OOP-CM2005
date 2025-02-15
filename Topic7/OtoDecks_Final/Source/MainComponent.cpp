@@ -99,6 +99,8 @@ void MainComponent::resized()
 
 void MainComponent::buttonClicked(Button * button) {
     if (button == &playButton){
+        
+        std::cout << "Start Button" << std::endl;
         transportSource.start();
     }
     if (button == &stopButton){
