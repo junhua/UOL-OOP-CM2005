@@ -6,7 +6,7 @@ Each topic (except Topic 1 and 6) contains the starter and final code.
 
 The tutorial can be found at: [link](https://simgejl.notion.site/CM2005-OOP-Oct-2023-6e1b8633d0384cd2923106d843e957c4?pvs=4)
 
-In the project-samples folder, there are videos of past projects. The numbers in the file names indicate their final scores.
+In the `SampleProjects` folder, there are videos of past projects. The numbers in the file names indicate their final scores.
 
 If you use this software, please cite it as below.
 
