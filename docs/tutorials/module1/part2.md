@@ -16,174 +16,143 @@ Think of variables like labeled boxes where you can store different types of thi
 
 In C++, we need to tell the computer what type of data each box (variable) will store.
 
-## Data Types in C++
+## Understanding Data Types
 
-### Understanding Types with Real-World Examples
+### Getting Started with the Data Types Example
 
-#### 1. Integer Types (Whole Numbers)
-Just like different size boxes, C++ has different types for storing whole numbers:
+1. Open the starter file:
+   - Navigate to `Tutorials/Module01/Part02/Starter/`
+   - Open `data_types_starter.cpp`
 
+2. First, add the necessary headers:
 ```cpp
-int age = 20;              // Regular box: -2 billion to +2 billion
-short smallNumber = 100;   // Small box: -32,768 to +32,767
-long bigNumber = 1000000;  // Big box: very large numbers
+#include <iostream>   // For input/output
+#include <limits>     // For finding limits of data types
 ```
 
-Real-world examples:
-- `int`: Age, counting things, scores
-- `short`: Day of month, hour of day
-- `long`: Population counts, distances in meters
+### Implementing Integer Types
 
-#### 2. Floating-Point Types (Decimal Numbers)
-For numbers with decimal points:
-
+Add these variables after the first TODO:
 ```cpp
-float temperature = 98.6f;    // Single precision (7 digits)
-double price = 19.99;         // Double precision (15 digits)
+// Integer types (whole numbers)
+int integer = 42;              // Regular box (e.g., counting people)
+short smallNumber = 123;       // Small box (e.g., age)
+long largeNumber = 123456789L; // Big box (e.g., population)
+unsigned positiveOnly = 100;   // Box for positive numbers only
 ```
 
-Think of it like:
-- `float`: Temperature, height in meters
-- `double`: Scientific calculations, precise money amounts
+Each type is like a different size box:
+- `int`: Regular box for most whole numbers
+- `short`: Small box for small numbers
+- `long`: Big box for very large numbers
+- `unsigned`: Box that only holds positive numbers
 
-#### 3. Character Type (Single Characters)
-For storing single characters:
+### Adding Floating-Point Types
 
+Add these after the next TODO:
 ```cpp
-char grade = 'A';            // Single quotes for characters
-char symbol = '$';
-char digit = '7';            // The character '7', not the number 7
+// Floating-point types (decimal numbers)
+float decimal = 3.14159f;      // Regular measuring box
+double precise = 3.14159265359;// Precise measuring box
 ```
 
-Like a tiny box that fits exactly one character:
-- Letters: 'A' to 'Z', 'a' to 'z'
-- Digits: '0' to '9'
-- Symbols: '$', '#', '@', etc.
+Think of these like:
+- `float`: Regular measuring cup
+- `double`: Precise scientific instrument
 
-#### 4. Boolean Type (True/False)
-For yes/no, true/false situations:
+### Character and Boolean Types
 
+Add these next:
 ```cpp
-bool isStudent = true;
-bool isPassed = false;
+// Character type
+char letter = 'A';             // Single character box
+
+// Boolean type
+bool isTrue = true;            // Like a light switch
 ```
 
-Like a light switch - only two possible states:
-- `true`: Yes, on, correct
-- `false`: No, off, incorrect
+Note:
+- Characters use single quotes ('A')
+- Booleans can only be true or false
+
+### Displaying Information
+
+Uncomment the cout statements and add the size information:
+```cpp
+std::cout << "int: " << sizeof(int) 
+          << " bytes (like a regular storage box)\n";
+// Add similar lines for other types...
+```
 
 ### Understanding Memory and Size
 
-Every variable takes up space in the computer's memory. Let's see how much:
+Add the number ranges section:
+```cpp
+std::cout << "int: " << std::numeric_limits<int>::min() 
+          << " to " << std::numeric_limits<int>::max() << "\n";
+```
 
+## Practice Exercise: Shopping Cart Calculator
+
+Now let's apply what we learned in a practical example!
+
+1. Open `practice_starter.cpp` in the Starter folder
+
+2. Add the necessary headers:
 ```cpp
 #include <iostream>
-
-int main() {
-    std::cout << "Size of different types:\n";
-    std::cout << "int: " << sizeof(int) << " bytes\n";
-    std::cout << "char: " << sizeof(char) << " byte\n";
-    std::cout << "bool: " << sizeof(bool) << " byte\n";
-    std::cout << "double: " << sizeof(double) << " bytes\n";
-}
+#include <iomanip>    // For formatting numbers
 ```
 
-Think of it like:
-- `char` (1 byte): Like a small locker
-- `int` (4 bytes): Like a medium cabinet
-- `double` (8 bytes): Like a large storage unit
-
-## Declaring Variables
-
-### Basic Declaration
-There are three main ways to create variables:
-
+3. Declare constants:
 ```cpp
-// Method 1: Declaration and initialization in one line
-int studentAge = 20;                // Most common way
-
-// Method 2: Declare first, assign later
-int score;                          // Create the variable
-score = 95;                         // Assign a value
-
-// Method 3: Initialize multiple variables
-int x = 0, y = 0, z = 0;           // All in one line
+const double TAX_RATE = 0.07;        // 7% sales tax
+constexpr int MONTHS_IN_YEAR = 12;   // Always 12 months
 ```
 
-### Type Inference with 'auto'
-Let C++ figure out the type automatically:
-
+4. Declare variables:
 ```cpp
-auto number = 42;        // C++ sees 42 and knows it's an int
-auto name = "John";      // C++ sees "John" and knows it's a string
-auto price = 19.99;      // C++ sees 19.99 and knows it's a double
+double itemPrice = 29.99;            // Price with cents
+int quantity = 3;                    // Whole number
+float discountPercent = 10.5f;       // Percentage
 ```
 
-Think of `auto` like telling C++: "You figure out what size box we need."
-
-## Constants
-
-Some values should never change. We use constants for these:
-
+5. Calculate subtotal:
 ```cpp
-const double PI = 3.14159;          // Mathematical constant
-const int MAX_STUDENTS = 30;        // Class size limit
-const char GRADE_A = 'A';           // Grade symbol
+double subtotal = itemPrice * quantity;
 ```
 
-Real-world examples of constants:
-- Days in a week (always 7)
-- Months in a year (always 12)
-- Freezing point of water (always 0°C)
-
-## Type Conversion
-
-Sometimes we need to convert between types:
-
-### Safe Conversions
+6. Calculate discount:
 ```cpp
-int whole = 5;
-double decimal = whole;    // Safe: 5 becomes 5.0
+double discount = subtotal * (discountPercent / 100.0);
 ```
-Like pouring water from a small cup into a bigger one - no spillage!
 
-### Risky Conversions
+Continue following the TODOs, implementing each calculation step by step.
+
+### Testing Your Implementation
+
+Your output should look like:
+```
+Shopping Cart Calculator
+======================
+
+Purchase Details:
+----------------
+Item Price: $29.99
+Quantity: 3
+...
+```
+
+## Common Problems and Solutions
+
+### 1. Integer Division
 ```cpp
-double price = 19.99;
-int dollars = price;       // Risky: loses the .99
+// Wrong: Integer division drops decimals
+int result = 5 / 2;  // Gets 2
+
+// Right: Use decimal numbers
+double result = 5.0 / 2.0;  // Gets 2.5
 ```
-Like pouring water from a big cup into a smaller one - might lose some!
-
-### Safe Type Casting
-```cpp
-double price = 19.99;
-int dollars = static_cast<int>(price);  // Proper way to convert
-```
-
-## Practice Exercise
-
-Create a program that:
-1. Declares variables for:
-   - Your age (int)
-   - Your height in meters (double)
-   - Your first initial (char)
-   - Whether you're a student (bool)
-2. Prints all these values
-3. Performs some calculations:
-   - Age in months
-   - Height in centimeters
-   - Years until graduation
-
-[View Solution]({{ site.baseurl }}/tutorials/module1/part2/solution)
-
-## Common Mistakes to Avoid
-
-### 1. Using Variables Before Initialization
-```cpp
-int score;
-std::cout << score;    // Wrong! Value is undefined
-```
-Always give variables a value before using them!
 
 ### 2. Type Mismatch
 ```cpp
@@ -191,38 +160,37 @@ int number = 3.14;     // Wrong! Loses decimal part
 char grade = "A";      // Wrong! "A" is string, 'A' is char
 ```
 
-### 3. Name Conflicts
+### 3. Overflow
 ```cpp
-int age = 20;
-int Age = 25;     // Different variable! C++ is case-sensitive
+short small = 32767;
+small = small + 1;    // Oops! Goes beyond short's limit
 ```
 
 ## Best Practices
-1. Use meaningful variable names
-   - Good: `studentAge`, `totalScore`
-   - Bad: `x`, `temp`, `var1`
-
-2. Initialize variables when declared
+1. Choose appropriate types:
    ```cpp
-   int count = 0;    // Good
-   int count;        // Less good
+   int count = 5;         // For counting
+   double price = 19.99;  // For money
+   char grade = 'A';      // For single characters
+   bool isValid = true;   // For yes/no values
    ```
 
-3. Use constants for fixed values
+2. Initialize variables when declared:
    ```cpp
-   const int DAYS_IN_WEEK = 7;
+   int age = 0;    // Good
+   int age;        // Less good
    ```
 
-4. Choose appropriate types
-   - Use `int` for whole numbers
-   - Use `double` for decimal numbers
-   - Use `char` for single characters
-   - Use `bool` for true/false values
+3. Use constants for fixed values:
+   ```cpp
+   const double PI = 3.14159;
+   const int MAX_STUDENTS = 30;
+   ```
 
 ## Next Steps
-1. Complete the practice exercise
-2. Experiment with different types
-3. Try type conversions
+1. Complete both starter programs
+2. Compare with the final versions
+3. Try modifying the values
 4. Move on to [Part 3: Input/Output]({{ site.baseurl }}/tutorials/module1/part3)
 
 ## Additional Resources

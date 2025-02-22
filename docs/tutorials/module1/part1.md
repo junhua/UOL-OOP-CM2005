@@ -71,79 +71,149 @@ If you see an error, don't worry! Common solutions:
 
 Now comes the exciting part - writing your first program! We'll create the traditional "Hello, World!" program.
 
-### Creating Your First File
+### Getting Started with the Starter Code
 
-1. Open VS Code
-2. Create a new file named `hello.cpp`
-   - The `.cpp` extension tells VS Code this is a C++ file
-3. Type this code exactly as shown:
+1. Open the starter file:
+   - Navigate to `Tutorials/Module01/Part01/Starter/`
+   - Open `hello_starter.cpp`
 
+2. You'll see a program structure with TODOs:
 ```cpp
-#include <iostream>
+// TODO: Include necessary header for input/output
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    // TODO: Display "Hello, World!" message
+    // ...
 }
 ```
 
-### Understanding Each Part
+### Step-by-Step Implementation
 
-Let's break down this code line by line:
-
+1. First, include the input/output library:
 ```cpp
 #include <iostream>
 ```
-- This is like importing tools we need
-- `iostream` gives us input/output capabilities
-- Think of it as getting your baking tools ready
+This gives us access to `cout` for displaying output.
 
+2. Add the "Hello, World!" message:
 ```cpp
-int main() {
+std::cout << "Hello, World!" << std::endl;
 ```
-- Every C++ program needs a `main` function
-- This is where your program starts
-- Like the "Step 1" of your recipe
+- `std::cout`: The output stream (like a channel for sending text)
+- `<<`: Sends data to the output
+- `std::endl`: Adds a new line
 
+3. Add your name:
 ```cpp
-    std::cout << "Hello, World!" << std::endl;
+std::cout << "My name is [Your Name]" << std::endl;
 ```
-- `std::cout` is how we print text to the screen
-- `<<` sends our text to the output
-- `std::endl` adds a new line (like pressing Enter)
+Replace [Your Name] with your actual name!
 
+4. Add the welcome message:
 ```cpp
-    return 0;
+std::cout << "Welcome to C++ Programming!" << std::endl;
 ```
-- Tells the computer our program finished successfully
-- Like saying "The cake is done!"
 
 ### Compiling and Running
 
-Now let's run your program:
-
 1. Open terminal in VS Code (View → Terminal)
-2. Type these commands:
-
+2. Navigate to your code directory
+3. Compile the program:
 ```bash
-# Compile your program
-g++ hello.cpp -o hello
+g++ hello_starter.cpp -o hello
+```
+4. Run the program:
+```bash
+# On Windows:
+hello.exe
 
-# Run your program
-./hello  # On Unix-like systems (macOS/Linux)
-hello.exe  # On Windows
+# On macOS/Linux:
+./hello
 ```
 
 You should see:
 ```
 Hello, World!
+My name is [Your Name]
+Welcome to C++ Programming!
 ```
 
-Congratulations! You've written and run your first C++ program! 🎉
+### Understanding Your Code
+
+Let's break down what each part does:
+
+```cpp
+#include <iostream>
+```
+- Like getting your tools ready before cooking
+- Tells C++ we want to use input/output features
+
+```cpp
+int main() {
+```
+- Every C++ program needs a main function
+- This is where your program starts
+- Like "Step 1" of your recipe
+
+```cpp
+std::cout << "Hello, World!" << std::endl;
+```
+- `std::cout`: How we send text to the screen
+- `<<`: Sends our text to the output
+- `std::endl`: Adds a new line (like pressing Enter)
+
+```cpp
+return 0;
+```
+- Tells the computer our program finished successfully
+- Like saying "The recipe is complete!"
+
+## Practice Exercise
+
+Now that you understand the basics, try the practice exercise:
+
+1. Open `practice_starter.cpp` in the Starter folder
+2. Follow the TODOs to create a formatted welcome message
+3. Your output should look like:
+```
+******************
+* Welcome to C++ *
+******************
+
+Created by: [Your Name]
+Date: [Current Date]
+
+Let's start programming!
+--------------------
+```
+
+### Implementation Steps
+
+1. Add the header:
+```cpp
+#include <iostream>
+```
+
+2. Create the top border:
+```cpp
+std::cout << "******************" << std::endl;
+```
+
+3. Add the welcome message:
+```cpp
+std::cout << "* Welcome to C++ *" << std::endl;
+```
+
+4. Continue following the TODOs, testing after each step
+
+### Checking Your Solution
+
+1. Compare your output with the example above
+2. Make sure all borders line up
+3. Check that spacing is correct
+4. If needed, look at `practice.cpp` in the Final folder
 
 ## Common Mistakes and Solutions
-
-Don't worry if you get errors - they're normal when learning! Here are common ones:
 
 ### 1. Forgotten Semicolon
 ```cpp
@@ -165,22 +235,12 @@ Int Main() {   // Wrong! C++ is case-sensitive
 ```
 Solution: Use exactly `int main()`
 
-## Practice Exercise
-
-Let's try something on your own! Create a program that:
-1. Prints "Welcome to C++"
-2. Prints your name on the next line
-3. Adds a blank line
-4. Prints "Let's start programming!"
-
-Try it yourself first, then check the [solution]({{ site.baseurl }}/tutorials/module1/part1/solution)
-
 ## Next Steps
 
-Once you're comfortable with this:
-1. Try modifying the "Hello, World!" program
-2. Complete the practice exercise
-3. Experiment with different messages
+Once you've completed both programs:
+1. Try modifying the messages
+2. Experiment with different border patterns
+3. Add more information about yourself
 4. Move on to [Part 2: Variables and Types]({{ site.baseurl }}/tutorials/module1/part2)
 
 ## Additional Resources
