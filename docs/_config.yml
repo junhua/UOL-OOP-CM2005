@@ -76,12 +76,8 @@ highlighter: rouge
 
 # Plugins
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-seo-tag
 
 # Defaults for pages
 defaults:
