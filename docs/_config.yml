@@ -26,17 +26,41 @@ collections:
   tutorials:
     permalink: "/:collection/:path/"
     output: true
+  labs:
+    permalink: "/:collection/:path/"
+    output: true
+  projects:
+    permalink: "/:collection/:path/"
+    output: true
 
 # Default settings
 defaults:
   -
     scope:
       path: ""
-      type: tutorials
     values:
       layout: "page"
-      nav_order: 1
-      has_children: false
+  -
+    scope:
+      path: "tutorials"
+      type: "tutorials"
+    values:
+      layout: "page"
+      parent: "Tutorials"
+  -
+    scope:
+      path: "labs"
+      type: "labs"
+    values:
+      layout: "page"
+      parent: "Labs"
+  -
+    scope:
+      path: "projects"
+      type: "projects"
+    values:
+      layout: "page"
+      parent: "Projects"
 
 # Exclude from processing
 exclude:
