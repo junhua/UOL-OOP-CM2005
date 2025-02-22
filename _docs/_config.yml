@@ -1,8 +1,8 @@
 title: CM2005 Object-Oriented Programming
 description: Course materials, labs, and project guides for CM2005
 theme: jekyll-theme-cayman
-baseurl: "/uol-oop"
-url: "http://junhua.me"
+baseurl: "/UOL-OOP"
+url: "https://junhua.github.io"
 
 # Site settings
 permalink: pretty
