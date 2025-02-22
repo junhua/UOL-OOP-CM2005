@@ -1,6 +1,21 @@
 title: CM2005 Object-Oriented Programming
 description: Course materials, labs, and project guides for CM2005
 theme: jekyll-theme-cayman
+baseurl: "/uol-oop"
+url: "http://junhua.me"
+
+# Site settings
+permalink: pretty
+include: ["_pages"]
+exclude: ["README.md"]
+
+# Default settings
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
 
 # Navigation
 show_downloads: false
