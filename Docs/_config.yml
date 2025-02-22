@@ -1,0 +1,11 @@
+title: CM2005 Object-Oriented Programming
+description: Course materials, labs, and project guides for CM2005
+theme: jekyll-theme-cayman
+
+# Navigation
+show_downloads: false
+google_analytics:
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
