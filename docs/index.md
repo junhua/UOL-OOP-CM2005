@@ -1,12 +1,8 @@
 ---
-layout: single
+layout: default
 title: Home
+nav_order: 1
 permalink: /
-sidebar:
-  nav: "docs"
-toc: true
-toc_label: "Contents"
-toc_icon: "list"
 ---
 
 # CM2005 Object-Oriented Programming

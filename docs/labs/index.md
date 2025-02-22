@@ -1,12 +1,9 @@
 ---
-layout: single
+layout: default
 title: Labs
+nav_order: 3
+has_children: true
 permalink: /labs/
-sidebar:
-  nav: "docs"
-toc: true
-toc_label: "Lab Projects"
-toc_icon: "flask"
 ---
 
 # Lab Projects
