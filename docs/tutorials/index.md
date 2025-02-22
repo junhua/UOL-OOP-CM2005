@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: single
 title: Tutorials
-nav_order: 2
-has_children: true
-has_toc: true
-permalink: /tutorials
+permalink: /tutorials/
+sidebar:
+  nav: "docs"
+toc: true
+toc_label: "Contents"
+toc_icon: "book"
 ---
 
 # C++ Programming Tutorials

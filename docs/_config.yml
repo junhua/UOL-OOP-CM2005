@@ -1,25 +1,32 @@
 title: CM2005 Object-Oriented Programming
 description: Course materials, labs, and project guides for CM2005
-remote_theme: just-the-docs/just-the-docs
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"
 baseurl: "/UOL-OOP"
 url: "https://junhua.github.io"
 
-# Theme settings
-color_scheme: light
-search_enabled: true
-heading_anchors: true
+# Site Settings
+locale: "en-US"
+search: true
+search_full_content: true
+repository: "junhua/UOL-OOP"
 
-# External navigation links
-nav_external_links:
-  - title: GitHub Repository
-    url: https://github.com/junhua/UOL-OOP
-    hide_icon: false
+# Site Author
+author:
+  name: "Course Team"
+  avatar: 
+  bio: "Object-Oriented Programming Course Materials"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/junhua/UOL-OOP"
 
-# Enable copy code button
-enable_copy_code_button: true
-
-# Footer content
-footer_content: "Copyright &copy; 2025"
+# Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/junhua/UOL-OOP"
 
 # Collections for better organization
 collections:
@@ -79,7 +86,45 @@ highlighter: rouge
 
 # Plugins
 plugins:
-  - jekyll-remote-theme
-  - jekyll-seo-tag
-  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
+
+# Defaults for pages
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
+      read_time: false
+      comments: false
+      share: false
+      related: false
+      sidebar:
+        nav: "docs"
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "docs"
+
+# Navigation
+docs:
+  - title: Course Content
+    children:
+      - title: "Tutorials"
+        url: /tutorials/
+      - title: "Labs"
+        url: /labs/
+      - title: "Projects"
+        url: /projects/

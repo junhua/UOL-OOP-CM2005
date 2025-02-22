@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: single
 title: Projects
-nav_order: 4
-has_children: true
-has_toc: true
-permalink: /projects
+permalink: /projects/
+sidebar:
+  nav: "docs"
+toc: true
+toc_label: "Project Assignments"
+toc_icon: "tasks"
 ---
 
 # Course Projects
