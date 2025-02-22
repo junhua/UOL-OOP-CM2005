@@ -1,4 +1,4 @@
-title: CM2005 Object-Oriented Programming
+title: CM2005
 description: Course materials, labs, and project guides for CM2005
 remote_theme: just-the-docs/just-the-docs
 baseurl: "/UOL-OOP"
@@ -7,7 +7,7 @@ url: "https://junhua.github.io"
 # Theme settings
 color_scheme: light
 search_enabled: true
-heading_anchors: true
+heading_anchors: false
 nav_external_links:
   - title: GitHub Repository
     url: https://github.com/junhua/UOL-OOP
