@@ -1,6 +1,6 @@
 title: CM2005 Object-Oriented Programming
 description: Course materials, labs, and project guides for CM2005
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 baseurl: "/UOL-OOP"
 url: "https://junhua.github.io"
 
@@ -52,3 +52,7 @@ exclude:
 # Build settings
 markdown: kramdown
 highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
