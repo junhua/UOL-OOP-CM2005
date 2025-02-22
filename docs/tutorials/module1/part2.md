@@ -96,7 +96,7 @@ std::cout << "int: " << std::numeric_limits<int>::min()
 
 Now let's apply what we learned in a practical example!
 
-1. Open `practice_starter.cpp` in the Starter folder
+1. Open `practice_starter.cpp` in the `Starter/` folder
 
 2. Add the necessary headers:
 ```cpp
@@ -130,6 +130,11 @@ double discount = subtotal * (discountPercent / 100.0);
 Continue following the TODOs, implementing each calculation step by step.
 
 ### Testing Your Implementation
+
+1. Compare your output with the example above
+2. Make sure all calculations are correct
+3. Check that formatting is neat
+4. If needed, look at `practice.cpp` in the `Final/` folder
 
 Your output should look like:
 ```
@@ -189,7 +194,7 @@ small = small + 1;    // Oops! Goes beyond short's limit
 
 ## Next Steps
 1. Complete both starter programs
-2. Compare with the final versions
+2. Compare with the final versions in the `Final/` folder
 3. Try modifying the values
 4. Move on to [Part 3: Input/Output]({{ site.baseurl }}/tutorials/module1/part3)
 

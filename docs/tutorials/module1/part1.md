@@ -211,7 +211,7 @@ std::cout << "* Welcome to C++ *" << std::endl;
 1. Compare your output with the example above
 2. Make sure all borders line up
 3. Check that spacing is correct
-4. If needed, look at `practice.cpp` in the Final folder
+4. If needed, look at `practice.cpp` in the `Final/` folder
 
 ## Common Mistakes and Solutions
 
