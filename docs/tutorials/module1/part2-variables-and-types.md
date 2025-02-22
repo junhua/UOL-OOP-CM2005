@@ -1,6 +1,10 @@
 ---
 layout: default
 title: Part 2 - Variables and Types
+nav_order: 2
+parent: Module 1 - Introduction to Programming and C++
+grand_parent: Tutorials
+permalink: /tutorials/module1/part2-variables-and-types/
 ---
 
 # Part 2: Variables and Types
@@ -196,7 +200,7 @@ small = small + 1;    // Oops! Goes beyond short's limit
 1. Complete both starter programs
 2. Compare with the final versions in the `Final/` folder
 3. Try modifying the values
-4. Move on to [Part 3: Input/Output]({{ site.baseurl }}/tutorials/module1/part3)
+4. Move on to [Part 3: Input/Output]({{ site.baseurl }}/tutorials/module1/part3-input-output)
 
 ## Additional Resources
 - [C++ Data Types Reference]({{ site.baseurl }}/docs/reference/data-types)

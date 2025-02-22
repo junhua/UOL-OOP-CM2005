@@ -16,7 +16,7 @@ nav_external_links:
 enable_copy_code_button: true
 
 # Footer content
-footer_content: "Copyright &copy; 2025"
+footer_content: "Copyright &copy; 2025 Junhua Liu"
 
 # Collections for better organization
 collections:
@@ -29,6 +29,21 @@ collections:
   projects:
     permalink: "/:collection/:path/"
     output: true
+
+# Navigation structure
+nav:
+  - title: Tutorials
+    url: /tutorials/
+    nav_order: 2
+    has_children: true
+  - title: Labs
+    url: /labs/
+    nav_order: 3
+    has_children: true
+  - title: Projects
+    url: /projects/
+    nav_order: 4
+    has_children: true
 
 # Default settings
 defaults:
@@ -46,11 +61,28 @@ defaults:
       parent: "Tutorials"
   -
     scope:
+      path: "tutorials/module*"
+    values:
+      parent: "Tutorials"
+      grand_parent: null
+  -
+    scope:
+      path: "tutorials/module*/part*"
+    values:
+      grand_parent: "Tutorials"
+  -
+    scope:
       path: "labs"
       type: "labs"
     values:
       layout: "page"
       parent: "Labs"
+  -
+    scope:
+      path: "labs/topic*"
+    values:
+      parent: "Labs"
+      grand_parent: null
   -
     scope:
       path: "projects"

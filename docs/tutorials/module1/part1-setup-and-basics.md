@@ -1,6 +1,10 @@
 ---
 layout: default
 title: Part 1 - Setup and Basics
+nav_order: 1
+parent: Module 1 - Introduction to Programming and C++
+grand_parent: Tutorials
+permalink: /tutorials/module1/part1-setup-and-basics/
 ---
 
 # Part 1: Setup and Basics

@@ -1,6 +1,10 @@
 ---
 layout: default
 title: Module 1 - Introduction to Programming and C++
+nav_order: 1
+parent: Tutorials
+has_children: true
+permalink: /tutorials/module1/
 ---
 
 # Module 1: Introduction to Programming and C++
@@ -10,42 +14,42 @@ This module introduces you to the fundamentals of programming using C++. You'll 
 
 ## Parts
 
-### [Part 1: Setup and Basics]({{ site.baseurl }}/tutorials/module1/part1)
+### [Part 1: Setup and Basics]({{ site.baseurl }}/tutorials/module1/part1-setup-and-basics)
 - Setting up your development environment
 - Understanding the compilation process
 - Writing your first C++ program
 - Basic program structure
 - Comments and documentation
 
-### [Part 2: Variables and Types]({{ site.baseurl }}/tutorials/module1/part2)
+### [Part 2: Variables and Types]({{ site.baseurl }}/tutorials/module1/part2-variables-and-types)
 - Data types in C++
 - Variable declaration and initialization
 - Type conversion
 - Constants
 - Naming conventions
 
-### [Part 3: Input/Output]({{ site.baseurl }}/tutorials/module1/part3)
+### [Part 3: Input/Output]({{ site.baseurl }}/tutorials/module1/part3-input-output)
 - Console input/output
 - Using cin and cout
 - Formatting output
 - Working with strings
 - Basic error handling
 
-### [Part 4: Operators]({{ site.baseurl }}/tutorials/module1/part4)
+### [Part 4: Operators]({{ site.baseurl }}/tutorials/module1/part4-operators)
 - Arithmetic operators
 - Assignment operators
 - Comparison operators
 - Logical operators
 - Operator precedence
 
-### [Part 5: Basic Programs]({{ site.baseurl }}/tutorials/module1/part5)
+### [Part 5: Basic Programs]({{ site.baseurl }}/tutorials/module1/part5-basic-programs)
 - Program flow
 - Simple calculations
 - User interaction
 - Basic error checking
 - Program organization
 
-### [Part 6: Problem Solving]({{ site.baseurl }}/tutorials/module1/part6)
+### [Part 6: Problem Solving]({{ site.baseurl }}/tutorials/module1/part6-problem-solving)
 - Breaking down problems
 - Planning solutions
 - Implementing solutions
