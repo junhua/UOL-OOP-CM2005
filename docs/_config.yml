@@ -1,25 +1,53 @@
 title: CM2005 Object-Oriented Programming
 description: Course materials, labs, and project guides for CM2005
-theme: jekyll-theme-cayman
+theme: just-the-docs
 baseurl: "/UOL-OOP"
 url: "https://junhua.github.io"
 
-# Site settings
-permalink: pretty
-include: ["_pages"]
-exclude: ["README.md"]
+# Theme settings
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+
+# External navigation links
+nav_external_links:
+  - title: GitHub Repository
+    url: https://github.com/junhua/UOL-OOP
+    hide_icon: false
+
+# Enable copy code button
+enable_copy_code_button: true
+
+# Footer content
+footer_content: "Copyright &copy; 2025"
+
+# Collections for better organization
+collections:
+  tutorials:
+    permalink: "/:collection/:path/"
+    output: true
 
 # Default settings
 defaults:
   -
     scope:
       path: ""
+      type: tutorials
     values:
-      layout: "default"
+      layout: "page"
+      nav_order: 1
+      has_children: false
 
-# Navigation
-show_downloads: false
-google_analytics:
+# Exclude from processing
+exclude:
+  - README.md
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
 
 # Build settings
 markdown: kramdown
