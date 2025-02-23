@@ -46,7 +46,7 @@ This module introduces you to the fundamentals of programming using C++. You'll 
 - Arithmetic operators (+, -, *, /, %)
 - Assignment operators (=, +=, -=, etc.)
 - Comparison operators (==, !=, >, <, etc.)
-- Logical operators (&&, ||, !)
+- Logical operators (&&, \|\|, !)
 - Understanding operator precedence
 
 ### [Part 6: Comments and Code Readability]({{ site.baseurl }}/tutorials/module1/part6-comments)

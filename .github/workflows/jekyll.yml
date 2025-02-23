@@ -27,8 +27,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
           working-directory: docs
+          
+      - name: Install dependencies
+        run: |
+          bundle config set --local path 'vendor/bundle'
+          bundle install
           
       - name: Setup Pages
         id: pages

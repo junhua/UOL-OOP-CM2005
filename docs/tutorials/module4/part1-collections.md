@@ -279,4 +279,4 @@ auto it = m.find(key);
 ## Next Steps
 - Try the practice exercise
 - Experiment with different container types
-- Move on to [Part 2: Accessing Array Elements]({{ site.baseurl }}/tutorials/module4/part2-arrays)
+- Move on to [Part 2: Accessing Array Elements]({% link tutorials/module4/part2-arrays.md %})
