@@ -1,93 +1,97 @@
-// Data Types in C++
-// This program shows the different types of "boxes" we can use
-// to store different kinds of information in our programs.
-
 #include <iostream>   // For input/output
 #include <limits>     // For finding limits of data types
 #include <iomanip>    // For formatting output
 
 int main() {
-    // Integer types (whole numbers)
-    // Think of these like different size boxes for counting things
-    int integer = 42;              // Regular box (e.g., counting people)
-    short smallNumber = 123;       // Small box (e.g., age)
-    long largeNumber = 123456789L; // Big box (e.g., population)
-    unsigned positiveOnly = 100;   // Box for positive numbers only
+    std::cout << "Understanding C++ Data Types\n";
+    std::cout << "===========================\n\n";
 
-    // Floating-point types (decimal numbers)
-    // Like boxes for measuring things
-    float decimal = 3.14159f;      // Regular measuring box (e.g., height)
-    double precise = 3.14159265359;// Precise measuring box (e.g., scientific data)
+    // Integer types demonstration
+    int integer = 42;              // Most common type
+    short smallNumber = 123;       // For small numbers
+    long largeNumber = 123456789L; // For very large numbers
+    unsigned positiveOnly = 100;   // Only positive numbers
 
-    // Character type
-    // Like a tiny box that fits exactly one character
-    char letter = 'A';             // Single character box (e.g., grades)
+    std::cout << "Integer Types Example:\n";
+    std::cout << "int value: " << integer << "\n";
+    std::cout << "short value: " << smallNumber << "\n";
+    std::cout << "long value: " << largeNumber << "\n";
+    std::cout << "unsigned value: " << positiveOnly << "\n\n";
 
-    // Boolean type
-    // Like a light switch - can only be true or false
-    bool isTrue = true;            // Switch box (e.g., yes/no questions)
+    // Floating-point types demonstration
+    float decimal = 3.14159f;       // 7 digits precision
+    double precise = 3.14159265359; // 15-16 digits precision
 
-    // Let's see how big each type of box is
-    std::cout << "Data Type Sizes (in bytes):\n";
-    std::cout << "-------------------------\n";
+    std::cout << "Floating-point Types Example:\n";
+    std::cout << std::fixed << std::setprecision(7);
+    std::cout << "float value: " << decimal << "\n";
+    std::cout << std::setprecision(15);
+    std::cout << "double value: " << precise << "\n\n";
+
+    // Character and boolean types demonstration
+    char letter = 'A';             // Single character
+    char digit = '5';              // Number as character
+    char symbol = '$';             // Special symbol
+    bool isTrue = true;            // Boolean true
+    bool isFalse = false;          // Boolean false
+
+    std::cout << "Character and Boolean Types Example:\n";
+    std::cout << "letter: " << letter << "\n";
+    std::cout << "digit: " << digit << "\n";
+    std::cout << "symbol: " << symbol << "\n";
+    std::cout << "isTrue: " << std::boolalpha << isTrue << "\n";
+    std::cout << "isFalse: " << isFalse << "\n\n";
+
+    std::cout << "Memory Sizes of Data Types\n";
+    std::cout << "=========================\n";
     std::cout << "int: " << sizeof(int) 
-              << " bytes (like a regular storage box)\n";
-    std::cout << "short: " << sizeof(short) 
-              << " bytes (like a small storage box)\n";
-    std::cout << "long: " << sizeof(long) 
-              << " bytes (like a large storage box)\n";
-    std::cout << "float: " << sizeof(float) 
-              << " bytes (like a measuring cup)\n";
-    std::cout << "double: " << sizeof(double) 
-              << " bytes (like a precise measuring tool)\n";
-    std::cout << "char: " << sizeof(char) 
-              << " byte (like a single letter slot)\n";
-    std::cout << "bool: " << sizeof(bool) 
-              << " byte (like a simple switch)\n\n";
+              << " bytes (typically 4 bytes on most systems)\n";
+    std::cout << "short: " << sizeof(short)
+              << " bytes (typically 2 bytes, good for small numbers)\n";
+    std::cout << "long: " << sizeof(long)
+              << " bytes (typically 8 bytes for large numbers)\n";
+    std::cout << "float: " << sizeof(float)
+              << " bytes (typically 4 bytes for basic decimal numbers)\n";
+    std::cout << "double: " << sizeof(double)
+              << " bytes (typically 8 bytes for precise calculations)\n";
+    std::cout << "char: " << sizeof(char)
+              << " byte (always 1 byte for single characters)\n";
+    std::cout << "bool: " << sizeof(bool)
+              << " byte (typically 1 byte despite only needing 1 bit)\n\n";
 
-    // Let's see what's the biggest and smallest number each box can hold
-    std::cout << "Number Ranges (how much can each box hold):\n";
-    std::cout << "----------------------------------------\n";
-    std::cout << "int: " << std::numeric_limits<int>::min() 
-              << " to " << std::numeric_limits<int>::max() << "\n";
-    std::cout << "unsigned int: 0 to " 
-              << std::numeric_limits<unsigned int>::max() 
-              << " (positive numbers only)\n\n";
+    std::cout << "Value Ranges of Data Types\n";
+    std::cout << "=========================\n";
+    std::cout << "int range: " 
+              << std::numeric_limits<int>::min() << " to " 
+              << std::numeric_limits<int>::max() << "\n";
+    std::cout << "unsigned int range: 0 to "
+              << std::numeric_limits<unsigned int>::max() << "\n";
+    std::cout << "short range: "
+              << std::numeric_limits<short>::min() << " to "
+              << std::numeric_limits<short>::max() << "\n";
+    std::cout << "long range: "
+              << std::numeric_limits<long>::min() << " to "
+              << std::numeric_limits<long>::max() << "\n";
+    std::cout << "float precision: " 
+              << std::numeric_limits<float>::digits10 << " digits\n";
+    std::cout << "double precision: "
+              << std::numeric_limits<double>::digits10 << " digits\n\n";
 
-    // Let's look at some example values
-    std::cout << "Example Values (what's in our boxes):\n";
-    std::cout << "--------------------------------\n";
-    std::cout << "integer: " << integer 
-              << " (a whole number)\n";
-    std::cout << "decimal: " << std::fixed << std::setprecision(2) 
-              << decimal << " (a number with decimal point)\n";
-    std::cout << "letter: " << letter << " (ASCII number: " 
-              << static_cast<int>(letter) << ")\n";
-    std::cout << "isTrue: " << std::boolalpha << isTrue 
-              << " (a yes/no value)\n\n";
-
-    // Demonstrate some interesting facts
-    std::cout << "Fun Facts:\n";
-    std::cout << "---------\n";
-    std::cout << "1. Characters are actually stored as numbers!\n";
-    std::cout << "   'A' is stored as: " << static_cast<int>('A') << "\n";
-    std::cout << "   'B' is stored as: " << static_cast<int>('B') << "\n";
-    std::cout << "2. Booleans use a whole byte even though they only need 1 bit!\n";
-    std::cout << "3. The size of each type might be different on different computers!\n";
+    std::cout << "Calculations Example\n";
+    std::cout << "===================\n";
+    // Integer calculations
+    int a = 5, b = 2;
+    std::cout << "Integer division (5/2): " << a / b 
+              << " (notice decimal is truncated)\n";
+    
+    // Floating-point calculations
+    double c = 5.0, d = 2.0;
+    std::cout << "Floating-point division (5.0/2.0): " << c / d 
+              << " (keeps decimal part)\n";
+    
+    // Mixed calculations
+    std::cout << "Mixed division (5/2.0): " << a / d 
+              << " (converts to floating-point)\n";
 
     return 0;
 }
-
-/*
-This program shows:
-1. Different types of data in C++
-2. How much space each type uses
-3. What kinds of values each type can store
-4. How to display different types of data
-
-Try:
-1. Change the values and see what happens
-2. Try storing invalid values (like text in an int)
-3. Experiment with different size numbers
-4. Try converting between different types
-*/

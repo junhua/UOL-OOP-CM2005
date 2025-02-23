@@ -14,57 +14,57 @@ This module introduces you to the fundamentals of programming using C++. You'll 
 
 ## Parts
 
-### [Part 1: Setup and Basics]({{ site.baseurl }}/tutorials/module1/part1-setup-and-basics)
-- Setting up your development environment
-- Understanding the compilation process
+### [Part 1: Welcome to C++ and Object-Oriented Programming]({{ site.baseurl }}/tutorials/module1/part1-welcome)
+- Introduction to programming concepts
+- Overview of C++ language
+- Object-Oriented Programming fundamentals
+- Setting up development environment
 - Writing your first C++ program
-- Basic program structure
-- Comments and documentation
 
-### [Part 2: Variables and Types]({{ site.baseurl }}/tutorials/module1/part2-variables-and-types)
-- Data types in C++
+### [Part 2: Basic C++ Program Structure]({{ site.baseurl }}/tutorials/module1/part2-program-structure)
+- Understanding program structure
+- Main function and entry point
+- Basic syntax rules
+- Code blocks and organization
+- Program flow basics
+
+### [Part 3: Variables and Data Types]({{ site.baseurl }}/tutorials/module1/part3-data-types)
+- Understanding variables
+- Basic data types in C++
 - Variable declaration and initialization
-- Type conversion
-- Constants
-- Naming conventions
+- Type conversion basics
+- Working with different data types
 
-### [Part 3: Input/Output]({{ site.baseurl }}/tutorials/module1/part3-input-output)
-- Console input/output
-- Using cin and cout
+### [Part 4: Input and Output (cin, cout)]({{ site.baseurl }}/tutorials/module1/part4-io)
+- Using cin for input
+- Using cout for output
+- Basic input/output operations
 - Formatting output
-- Working with strings
-- Basic error handling
+- Handling input/output errors
 
-### [Part 4: Operators]({{ site.baseurl }}/tutorials/module1/part4-operators)
-- Arithmetic operators
-- Assignment operators
-- Comparison operators
-- Logical operators
-- Operator precedence
+### [Part 5: Basic Operators]({{ site.baseurl }}/tutorials/module1/part5-operators)
+- Arithmetic operators (+, -, *, /, %)
+- Assignment operators (=, +=, -=, etc.)
+- Comparison operators (==, !=, >, <, etc.)
+- Logical operators (&&, ||, !)
+- Understanding operator precedence
 
-### [Part 5: Basic Programs]({{ site.baseurl }}/tutorials/module1/part5-basic-programs)
-- Program flow
-- Simple calculations
-- User interaction
-- Basic error checking
-- Program organization
-
-### [Part 6: Problem Solving]({{ site.baseurl }}/tutorials/module1/part6-problem-solving)
-- Breaking down problems
-- Planning solutions
-- Implementing solutions
-- Testing and debugging
-- Best practices
+### [Part 6: Comments and Code Readability]({{ site.baseurl }}/tutorials/module1/part6-comments)
+- Writing effective comments
+- Code documentation best practices
+- Formatting code for readability
+- Naming conventions
+- Code organization principles
 
 ## Learning Outcomes
 By the end of this module, you will be able to:
 - Set up a C++ development environment
-- Write basic C++ programs
-- Work with variables and different data types
+- Write and run basic C++ programs
+- Work with variables and data types
 - Perform input/output operations
-- Use various operators
-- Solve simple programming problems
-- Apply basic debugging techniques
+- Use basic operators
+- Write readable and well-documented code
+- Follow C++ best practices
 
 ## Resources
 - [C++ Reference](https://en.cppreference.com/)

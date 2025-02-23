@@ -1,31 +1,57 @@
-// Your First C++ Program
-// This program demonstrates basic output in C++
+/**
+ * Part 01: Welcome to C++ - Final Implementation
+ * 
+ * This program demonstrates the basic structure of a C++ program
+ * and how to output text to the console.
+ * 
+ * Key Concepts Demonstrated:
+ * 1. Header inclusion
+ * 2. Main function structure
+ * 3. Standard output
+ * 4. Program return values
+ */
 
-#include <iostream>   // For input/output operations
+// Include the input/output stream library
+// This gives us access to std::cout for output
+#include <iostream>
 
+// The main function - the entry point of every C++ program
+// When you run the program, it starts executing from here
 int main() {
-    // Display welcome messages
-    std::cout << "Hello, World!" << std::endl;
+    // Use the standard output stream (cout) to print a message
+    // The << operator is used to send data to cout
+    std::cout << "Welcome to C++!" << std::endl;
     
-    // Display your name (students will put their name here)
-    std::cout << "My name is John Doe" << std::endl;
+    // endl adds a newline and flushes the output buffer
+    // Alternative: could use '\n' for just a newline
     
-    // Display final message
-    std::cout << "Welcome to C++ Programming!" << std::endl;
-    
-    return 0;  // Program completed successfully
+    // Return 0 to indicate the program completed successfully
+    // Non-zero values typically indicate errors
+    return 0;
 }
 
 /*
-This program shows:
-1. How to include necessary headers
-2. How to use std::cout for output
-3. How to add new lines with std::endl
-4. How to return from main()
+Program Explanation:
+1. #include <iostream>
+   - Brings in the input/output library
+   - Required for using std::cout
+
+2. int main()
+   - The main function that C++ looks for to start the program
+   - Returns an integer (int) to indicate program status
+
+3. std::cout << "Welcome to C++!" << std::endl;
+   - std::cout is the standard output stream
+   - << is the stream insertion operator
+   - std::endl adds a newline and flushes output
+
+4. return 0;
+   - Indicates successful program completion
+   - Operating system uses this value
 
 Try:
-1. Change the name to your name
-2. Add more messages
-3. Try using \n instead of std::endl
-4. Add some blank lines between messages
+1. Change the welcome message
+2. Add more cout statements
+3. Use '\n' instead of std::endl
+4. Add more text using multiple << operators
 */

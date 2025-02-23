@@ -7,7 +7,9 @@ url: "https://junhua.github.io"
 # Theme settings
 color_scheme: light
 search_enabled: true
-heading_anchors: false
+heading_anchors: true
+
+# External links
 nav_external_links:
   - title: GitHub Repository
     url: https://github.com/junhua/UOL-OOP
@@ -110,39 +112,3 @@ highlighter: rouge
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
-
-# Defaults for pages
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: false
-      read_time: false
-      comments: false
-      share: false
-      related: false
-      sidebar:
-        nav: "docs"
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: false
-      sidebar:
-        nav: "docs"
-
-# Navigation
-docs:
-  - title: Course Content
-    children:
-      - title: "Tutorials"
-        url: /tutorials/
-      - title: "Labs"
-        url: /labs/
-      - title: "Projects"
-        url: /projects/

@@ -1,80 +1,61 @@
-// Shopping Cart Calculator
-// This program demonstrates how to use different types of variables
-// to calculate prices, discounts, and payment plans.
-
-// TODO: Include necessary header for input/output
+#include <iostream>
+// TODO: Add iomanip header for formatting numbers
 
 int main() {
-    // TODO: Declare constants (values that never change)
-    // - Sales tax rate (7% = 0.07)
-    // - Months in a year (for payment plan)
-    
-    // TODO: Declare variables for item information
-    // - Item price (needs decimal places)
-    // - Quantity (whole number)
-    // - Discount percentage
-    
-    // TODO: Calculate subtotal (price × quantity)
-    // Store result in a variable
-    
-    // TODO: Calculate discount amount
-    // - Convert percentage to decimal (divide by 100)
-    // - Multiply subtotal by discount decimal
-    
-    // TODO: Calculate amount after discount
-    // - Subtract discount from subtotal
-    
-    // TODO: Calculate sales tax
-    // - Multiply amount after discount by tax rate
-    
+    std::cout << "Shopping Cart Calculator\n";
+    std::cout << "======================\n\n";
+
+    // TODO: Declare constants
+    // 1. Create a constant for tax rate (7% = 0.07)
+    // 2. Create a constant for months in year (12)
+    // Hint: Use 'const' or 'constexpr'
+
+
+    // TODO: Declare variables for the calculation
+    // 1. Item price (use double for precise decimals)
+    // 2. Quantity (use int for whole numbers)
+    // 3. Discount percentage (use float)
+    // Hint: Initialize with reasonable values
+
+
+    std::cout << "Purchase Details:\n";
+    std::cout << "----------------\n";
+
+    // TODO: Display initial values
+    // 1. Show item price
+    // 2. Show quantity
+    // 3. Show discount percentage
+    // Hint: Use std::fixed and std::setprecision for formatting
+
+
+    // TODO: Calculate subtotal (price * quantity)
+
+
+    // TODO: Calculate discount amount (subtotal * discount percentage / 100)
+
+
+    // TODO: Calculate tax (tax rate * (subtotal - discount))
+
+
     // TODO: Calculate final total
-    // - Add taxed amount and sales tax
-    
-    // TODO: Calculate monthly payment
-    // - Divide total by months in year
-    // - Convert to whole number (remove decimals)
-    
-    // TODO: Display all results
-    // Uncomment these lines after adding #include <iostream>
-    // std::cout << "Shopping Cart Calculator\n";
-    // std::cout << "======================\n\n";
-    // Add your output code here...
-    
+    // Hint: subtotal - discount + tax
+
+
+    std::cout << "\nCalculation Results:\n";
+    std::cout << "-----------------\n";
+
+    // TODO: Display all calculations
+    // 1. Subtotal
+    // 2. Discount amount
+    // 3. Tax amount
+    // 4. Final total
+    // Hint: Format all money values to 2 decimal places
+
+
+    // TODO: Extra Challenge:
+    // 1. Calculate monthly payment (total / 12)
+    // 2. Show monthly payment amount
+
+
     return 0;
 }
-
-/*
-Learning Goals:
-1. Use different variable types (int, double, const)
-2. Perform calculations with different types
-3. Convert between types (type casting)
-4. Format output clearly
-
-Instructions:
-1. Add iostream header
-2. Declare all needed variables
-3. Perform calculations step by step
-4. Display results in a neat format
-
-Expected Output Example:
-Shopping Cart Calculator
-======================
-
-Purchase Details:
-----------------
-Item Price: $29.99
-Quantity: 3
-Discount: 10.5%
-
-Calculation Breakdown:
---------------------
-1. Subtotal: $89.97 (price × quantity)
-2. Discount: $9.45 (10.5% off)
-3. After Discount: $80.52
-4. Sales Tax: $5.64 (7% tax)
-5. Total Cost: $86.16
-
-Monthly Payment Plan:
--------------------
-Monthly Payment: $7 (total ÷ 12 months, rounded down)
-*/

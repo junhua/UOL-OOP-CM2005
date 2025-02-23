@@ -1,258 +1,269 @@
-// Scientific Calculator Program
-// Think of this program like a scientific calculator with multiple functions,
-// error checking, and a user-friendly menu system.
+// File: practice_solution.cpp
+// Description: Complete solutions for basic programs practice exercises
 
-#include <iostream>   // For input/output
-#include <iomanip>    // For formatting numbers
-#include <limits>     // For numeric limits
-#include <cmath>      // For mathematical functions
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
+#include <limits>
+#include <sstream>
 
-// Constants (like built-in calculator settings)
-const int MAX_ATTEMPTS = 3;        // Maximum tries for input
-const double EPSILON = 1e-10;      // Very small number for division check
-
-// First, declare all the functions we'll need
-// Like listing all the buttons on our calculator
-
-// Menu and display functions (like the calculator's screen)
-void displayMenu();                // Show available operations
-int getMenuChoice();              // Get user's choice
-void displayResult(double result); // Show the answer
-void displayError(const std::string& message);  // Show error messages
-
-// Input functions (like reading button presses)
-double getNumber(const std::string& prompt);  // Get a number from user
-char getOperator();               // Get +, -, *, or /
-void clearInputBuffer();          // Clear any leftover input
-
-// Safety checks (like calculator's error prevention)
-bool isDivisionSafe(double denominator);  // Check if division is safe
-
-// Basic math operations (like calculator's basic functions)
-double add(double a, double b);        // Addition
-double subtract(double a, double b);    // Subtraction
-double multiply(double a, double b);    // Multiplication
-double divide(double a, double b);      // Division
-double power(double base, double exp);  // Power function
-double squareRoot(double number);       // Square root
-
-int main() {
-    // Welcome screen
-    std::cout << "Scientific Calculator\n";
-    std::cout << "===================\n\n";
-
-    // Main calculator loop (like keeping calculator on)
-    bool running = true;
-    while (running) {
-        // Show menu and get choice (like calculator's mode selection)
-        displayMenu();
-        int choice = getMenuChoice();
-
-        // Handle different operations (like different calculator modes)
-        switch (choice) {
-            case 1: {  // Basic arithmetic mode
-                // Get first number
-                double num1 = getNumber("Enter first number: ");
-                
-                // Get operation (+, -, *, /)
-                char op = getOperator();
-                
-                // Get second number
-                double num2 = getNumber("Enter second number: ");
-                
-                // Calculate result
-                double result;
-                bool validOperation = true;
-
-                // Perform the chosen operation
-                switch (op) {
-                    case '+': result = add(num1, num2); break;
-                    case '-': result = subtract(num1, num2); break;
-                    case '*': result = multiply(num1, num2); break;
-                    case '/':
-                        // Check for division by zero
-                        if (isDivisionSafe(num2)) {
-                            result = divide(num1, num2);
-                        } else {
-                            displayError("Cannot divide by zero!");
-                            validOperation = false;
-                        }
-                        break;
-                    default:
-                        displayError("Invalid operator!");
-                        validOperation = false;
-                }
-
-                // Show result if operation was valid
-                if (validOperation) {
-                    displayResult(result);
-                }
-                break;
-            }
-            case 2: {  // Power function mode
-                double base = getNumber("Enter base number: ");
-                double exp = getNumber("Enter exponent: ");
-                displayResult(power(base, exp));
-                break;
-            }
-            case 3: {  // Square root mode
-                double num = getNumber("Enter number: ");
-                // Can't take square root of negative numbers
-                if (num >= 0) {
-                    displayResult(squareRoot(num));
-                } else {
-                    displayError("Cannot find square root of negative number!");
-                }
-                break;
-            }
-            case 4:  // Exit (turn off calculator)
-                running = false;
-                std::cout << "\nThank you for using Scientific Calculator!\n";
-                break;
-            default:  // Invalid choice
-                displayError("Invalid menu choice!");
-        }
-    }
-
-    return 0;  // Program completed successfully
-}
-
-// Function to show available operations
-// Like the calculator's mode display
-void displayMenu() {
-    std::cout << "\nAvailable Operations:\n";
-    std::cout << "1. Basic Math (+, -, *, /)\n";
-    std::cout << "2. Power Function (x^y)\n";
-    std::cout << "3. Square Root (√x)\n";
-    std::cout << "4. Exit\n\n";
-}
-
-// Function to get user's menu choice
-// Like reading which button was pressed
-int getMenuChoice() {
-    int choice;
-    std::cout << "Enter choice (1-4): ";
-    if (std::cin >> choice) {
-        clearInputBuffer();
-        return choice;
-    }
-    clearInputBuffer();
-    return 0;  // Invalid input
-}
-
-// Function to get a number from the user
-// Like reading numbers entered on calculator
-double getNumber(const std::string& prompt) {
-    double number;
-    bool valid = false;
-    int attempts = 0;
-
-    // Keep trying until we get a valid number
-    do {
-        std::cout << prompt;
-        if (std::cin >> number) {
-            valid = true;
-        } else {
-            displayError("Please enter a valid number!");
-            clearInputBuffer();
-            attempts++;
-        }
-    } while (!valid && attempts < MAX_ATTEMPTS);
-
-    // If we never got a valid number
-    if (!valid) {
-        throw std::runtime_error("Too many invalid attempts!");
-    }
-
-    clearInputBuffer();
-    return number;
-}
-
-// Function to get an operator from the user
-// Like pressing +, -, *, or / on calculator
-char getOperator() {
-    char op;
-    bool valid = false;
-    
-    do {
-        std::cout << "Enter operator (+, -, *, /): ";
-        if (std::cin >> op && (op == '+' || op == '-' || op == '*' || op == '/')) {
-            valid = true;
-        } else {
-            displayError("Please enter a valid operator!");
-            clearInputBuffer();
-        }
-    } while (!valid);
-
-    clearInputBuffer();
-    return op;
-}
-
-// Function to clear input buffer
-// Like clearing calculator's memory
+// Utility function to clear input buffer
 void clearInputBuffer() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-// Function to check if division is safe
-// Like checking for division by zero
-bool isDivisionSafe(double denominator) {
-    return std::abs(denominator) > EPSILON;
+// Function to get valid double input
+double getValidDouble(const std::string& prompt, double min, double max) {
+    double value;
+    bool validInput = false;
+    
+    do {
+        std::cout << prompt;
+        if (std::cin >> value) {
+            if (value >= min && value <= max) {
+                validInput = true;
+            } else {
+                std::cout << "Error: Value must be between " << min << " and " << max << "\n";
+            }
+        } else {
+            std::cout << "Error: Please enter a valid number\n";
+            clearInputBuffer();
+        }
+    } while (!validInput);
+    
+    clearInputBuffer();
+    return value;
 }
 
-// Function to display the result
-// Like showing the answer on calculator's screen
-void displayResult(double result) {
-    std::cout << std::fixed << std::setprecision(4);
-    std::cout << "\nResult: " << result << "\n";
+// Function to format currency
+std::string formatCurrency(double amount) {
+    std::ostringstream ss;
+    ss << std::fixed << std::setprecision(2) << "$" << amount;
+    return ss.str();
 }
 
-// Function to display error messages
-// Like calculator's error display
-void displayError(const std::string& message) {
-    std::cout << "\nError: " << message << "\n";
+int main() {
+    std::cout << "Basic Programs Practice Solutions\n";
+    std::cout << "================================\n\n";
+
+    // Exercise 1: Restaurant Order System
+    std::cout << "Exercise 1: Restaurant Order System\n";
+    std::cout << "--------------------------------\n";
+    
+    // Menu setup
+    const std::string MENU_ITEMS[] = {"Burger", "Fries", "Drink", "Dessert"};
+    const double MENU_PRICES[] = {8.99, 3.99, 2.49, 4.99};
+    const int MENU_SIZE = 4;
+    const double TAX_RATE = 0.08;  // 8% tax
+    const double DISCOUNT_THRESHOLD = 20.00;  // Discount for orders over $20
+    const double DISCOUNT_RATE = 0.10;  // 10% discount
+    
+    // Order storage
+    std::vector<int> quantities(MENU_SIZE, 0);
+    
+    // Take order
+    std::cout << "Today's Menu:\n";
+    for (int i = 0; i < MENU_SIZE; i++) {
+        std::cout << (i + 1) << ". " << MENU_ITEMS[i] 
+                  << " - " << formatCurrency(MENU_PRICES[i]) << "\n";
+    }
+    
+    bool ordering = true;
+    while (ordering) {
+        std::cout << "\nEnter item number (1-" << MENU_SIZE 
+                  << ") or 0 to finish: ";
+        int choice;
+        std::cin >> choice;
+        
+        if (choice == 0) {
+            ordering = false;
+        } else if (choice >= 1 && choice <= MENU_SIZE) {
+            std::cout << "Enter quantity: ";
+            int quantity;
+            std::cin >> quantity;
+            if (quantity > 0) {
+                quantities[choice - 1] += quantity;
+            }
+        } else {
+            std::cout << "Invalid choice!\n";
+        }
+    }
+    
+    // Calculate totals
+    double subtotal = 0.0;
+    std::cout << "\nOrder Summary:\n";
+    std::cout << "-------------\n";
+    for (int i = 0; i < MENU_SIZE; i++) {
+        if (quantities[i] > 0) {
+            double itemTotal = MENU_PRICES[i] * quantities[i];
+            subtotal += itemTotal;
+            std::cout << MENU_ITEMS[i] << " x " << quantities[i] 
+                      << " = " << formatCurrency(itemTotal) << "\n";
+        }
+    }
+    
+    // Apply discount if eligible
+    double discount = 0.0;
+    if (subtotal >= DISCOUNT_THRESHOLD) {
+        discount = subtotal * DISCOUNT_RATE;
+    }
+    
+    double afterDiscount = subtotal - discount;
+    double tax = afterDiscount * TAX_RATE;
+    double total = afterDiscount + tax;
+    
+    std::cout << "\nSubtotal: " << formatCurrency(subtotal) << "\n";
+    if (discount > 0) {
+        std::cout << "Discount: -" << formatCurrency(discount) << "\n";
+    }
+    std::cout << "Tax: " << formatCurrency(tax) << "\n";
+    std::cout << "Total: " << formatCurrency(total) << "\n\n";
+
+    // Exercise 2: Bank Account Manager
+    std::cout << "Exercise 2: Bank Account Manager\n";
+    std::cout << "-----------------------------\n";
+    
+    double balance = 1000.00;  // Initial balance
+    std::vector<std::string> transactions;
+    
+    while (true) {
+        std::cout << "\nCurrent Balance: " << formatCurrency(balance) << "\n\n";
+        std::cout << "1. Deposit\n";
+        std::cout << "2. Withdraw\n";
+        std::cout << "3. View Transactions\n";
+        std::cout << "4. Exit\n";
+        std::cout << "Choose an option (1-4): ";
+        
+        int choice;
+        std::cin >> choice;
+        
+        switch (choice) {
+            case 1: {  // Deposit
+                double amount = getValidDouble("Enter deposit amount: $", 0.01, 10000.00);
+                balance += amount;
+                transactions.push_back("Deposit: " + formatCurrency(amount));
+                std::cout << "Deposit successful!\n";
+                break;
+            }
+            case 2: {  // Withdraw
+                double amount = getValidDouble("Enter withdrawal amount: $", 0.01, balance);
+                balance -= amount;
+                transactions.push_back("Withdrawal: " + formatCurrency(amount));
+                std::cout << "Withdrawal successful!\n";
+                break;
+            }
+            case 3: {  // View transactions
+                std::cout << "\nTransaction History:\n";
+                std::cout << "-------------------\n";
+                for (const auto& transaction : transactions) {
+                    std::cout << transaction << "\n";
+                }
+                std::cout << "Current Balance: " << formatCurrency(balance) << "\n";
+                break;
+            }
+            case 4:  // Exit
+                std::cout << "Thank you for using Bank Account Manager!\n\n";
+                goto nextExercise;  // Exit nested loop
+            default:
+                std::cout << "Invalid option! Please try again.\n";
+        }
+    }
+    nextExercise:
+
+    // Exercise 3: Temperature Monitoring System
+    std::cout << "Exercise 3: Temperature Monitoring System\n";
+    std::cout << "----------------------------------\n";
+    
+    const int HOURS = 24;
+    std::vector<double> temperatures;
+    const double HIGH_ALERT = 30.0;
+    const double LOW_ALERT = 10.0;
+    
+    // Simulate temperature readings
+    std::cout << "Entering temperature readings for 24 hours...\n";
+    for (int hour = 0; hour < HOURS; hour++) {
+        // Simulate temperature between 5°C and 35°C
+        double temp = 5 + (rand() % 31);
+        temperatures.push_back(temp);
+        
+        std::cout << "Hour " << std::setw(2) << hour << ": " 
+                  << std::fixed << std::setprecision(1) << temp << "°C";
+        
+        if (temp > HIGH_ALERT) {
+            std::cout << " (HIGH TEMPERATURE ALERT!)";
+        } else if (temp < LOW_ALERT) {
+            std::cout << " (LOW TEMPERATURE ALERT!)";
+        }
+        std::cout << "\n";
+    }
+    
+    // Calculate statistics
+    double sum = 0, max = temperatures[0], min = temperatures[0];
+    int highAlerts = 0, lowAlerts = 0;
+    
+    for (double temp : temperatures) {
+        sum += temp;
+        max = std::max(max, temp);
+        min = std::min(min, temp);
+        if (temp > HIGH_ALERT) highAlerts++;
+        if (temp < LOW_ALERT) lowAlerts++;
+    }
+    
+    double average = sum / temperatures.size();
+    
+    // Display summary
+    std::cout << "\nTemperature Summary:\n";
+    std::cout << "Average Temperature: " << average << "°C\n";
+    std::cout << "Highest Temperature: " << max << "°C\n";
+    std::cout << "Lowest Temperature: " << min << "°C\n";
+    std::cout << "High Temperature Alerts: " << highAlerts << "\n";
+    std::cout << "Low Temperature Alerts: " << lowAlerts << "\n\n";
+
+    // Exercise 4: Student Grade Calculator
+    std::cout << "Exercise 4: Student Grade Calculator\n";
+    std::cout << "-------------------------------\n";
+    
+    // Grade weights
+    const double HOMEWORK_WEIGHT = 0.3;  // 30%
+    const double MIDTERM_WEIGHT = 0.3;   // 30%
+    const double FINAL_WEIGHT = 0.4;     // 40%
+    
+    // Get grades
+    double homework = getValidDouble("Enter homework grade (0-100): ", 0, 100);
+    double midterm = getValidDouble("Enter midterm grade (0-100): ", 0, 100);
+    double final = getValidDouble("Enter final exam grade (0-100): ", 0, 100);
+    
+    // Calculate weighted average
+    double finalGrade = (homework * HOMEWORK_WEIGHT) +
+                       (midterm * MIDTERM_WEIGHT) +
+                       (final * FINAL_WEIGHT);
+    
+    // Determine letter grade
+    char letterGrade;
+    if (finalGrade >= 90) letterGrade = 'A';
+    else if (finalGrade >= 80) letterGrade = 'B';
+    else if (finalGrade >= 70) letterGrade = 'C';
+    else if (finalGrade >= 60) letterGrade = 'D';
+    else letterGrade = 'F';
+    
+    // Display results
+    std::cout << "\nGrade Report:\n";
+    std::cout << "------------\n";
+    std::cout << "Homework (30%): " << homework << "\n";
+    std::cout << "Midterm (30%): " << midterm << "\n";
+    std::cout << "Final Exam (40%): " << final << "\n";
+    std::cout << "Final Grade: " << std::fixed << std::setprecision(1) 
+              << finalGrade << " (" << letterGrade << ")\n";
+    
+    if (letterGrade == 'F') {
+        std::cout << "Student must retake the course.\n";
+    } else if (letterGrade == 'D') {
+        std::cout << "Student should consider getting additional help.\n";
+    } else if (letterGrade == 'A') {
+        std::cout << "Excellent work!\n";
+    }
+
+    return 0;
 }
-
-// Basic calculator operations
-// Like the basic function buttons on a calculator
-
-double add(double a, double b) {
-    return a + b;  // Simple addition
-}
-
-double subtract(double a, double b) {
-    return a - b;  // Simple subtraction
-}
-
-double multiply(double a, double b) {
-    return a * b;  // Simple multiplication
-}
-
-double divide(double a, double b) {
-    return a / b;  // Simple division
-}
-
-double power(double base, double exponent) {
-    return std::pow(base, exponent);  // Power function
-}
-
-double squareRoot(double number) {
-    return std::sqrt(number);  // Square root function
-}
-
-/*
-This program shows:
-1. How to organize a larger program into functions
-2. How to handle user input safely
-3. How to create a menu system
-4. How to perform calculations
-5. How to handle errors
-
-Try:
-1. Basic calculations (like 5 + 3)
-2. Powers (like 2^3 = 8)
-3. Square roots (like √16 = 4)
-4. Division by zero (to see error handling)
-5. Invalid inputs (to test error checking)
-*/
