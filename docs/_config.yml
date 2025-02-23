@@ -1,8 +1,8 @@
 title: CM2005
 description: Course materials, labs, and project guides for CM2005
 remote_theme: just-the-docs/just-the-docs
-baseurl: "/UOL-OOP"
-url: "https://junhua.github.io"
+baseurl: "/uol-oop"
+url: "https://junhua.me"
 
 # Theme settings
 color_scheme: light
