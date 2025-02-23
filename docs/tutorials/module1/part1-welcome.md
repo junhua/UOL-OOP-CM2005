@@ -1,3 +1,12 @@
+---
+layout: default
+title: Part 1 - Welcome to C++
+nav_order: 1
+parent: Module 1
+grand_parent: Tutorials
+permalink: /tutorials/module1/part1-welcome
+---
+
 # Part 01: Welcome to C++ and Object-Oriented Programming
 
 ## Learning Objectives
@@ -54,3 +63,6 @@ Welcome to C++ programming! Think of learning C++ like learning a new language -
 - Modern C++ features
 - OOP principles in depth
 - Development environment tips
+
+## Next Steps
+Continue to [Part 2: Basic Syntax]({{ site.baseurl }}/tutorials/module1/part2-syntax) to learn about C++ syntax fundamentals.
