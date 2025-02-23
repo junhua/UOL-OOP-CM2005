@@ -301,6 +301,115 @@ int main() {
 }
 ```
 
+### Test Cases
+Here are some test cases to verify your implementation:
+
+1. Arithmetic Operators Test
+
+```
+Code:
+int a = 10, b = 3;
+
+Expected Output:
+Addition: a + b = 13
+Subtraction: a - b = 7
+Multiplication: a * b = 30
+Division: a / b = 3
+Modulus: a % b = 1
+```
+
+2. Assignment Operators Test
+
+```
+Code:
+int x = 5;
+x += 3;
+x -= 2;
+x *= 4;
+x /= 2;
+x %= 3;
+
+Expected Output:
+Initial x = 5
+After x += 3: x = 8
+After x -= 2: x = 6
+After x *= 4: x = 24
+After x /= 2: x = 12
+After x %= 3: x = 0
+```
+
+3. Comparison Operators Test
+
+```
+Code:
+int p = 5, q = 10;
+
+Expected Output:
+p == q: false
+p != q: true
+p > q: false
+p < q: true
+p >= q: false
+p <= q: true
+```
+
+4. Logical Operators Test
+
+```
+Code:
+bool condition1 = true, condition2 = false;
+
+Expected Output:
+AND (&&): false
+OR (||): true
+NOT (!): false
+```
+
+5. Pre/Post Increment Test
+
+```
+Code:
+int i = 5, j;
+j = ++i;  // Pre-increment
+Output: i = 6, j = 6
+
+i = 5;    // Reset
+j = i++;  // Post-increment
+Output: i = 6, j = 5
+```
+
+6. Pre/Post Decrement Test
+
+```
+Code:
+int i = 5, j;
+j = --i;  // Pre-decrement
+Output: i = 4, j = 4
+
+i = 5;    // Reset
+j = i--;  // Post-decrement
+Output: i = 4, j = 5
+```
+
+7. Operator Precedence Test
+
+```
+Code:
+int result = 10 + 20 * 2;
+
+Expected Output:
+result = 50  // Multiplication before addition
+```
+
+Try these test cases to verify:
+- Arithmetic operations
+- Assignment behavior
+- Comparison results
+- Logical operations
+- Increment/decrement effects
+- Operator precedence
+- Type conversion in operations
+
 ## Understanding Operators
 
 ### Arithmetic Operators

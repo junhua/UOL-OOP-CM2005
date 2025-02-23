@@ -350,6 +350,105 @@ int main() {
 }
 ```
 
+### Test Cases
+Here are some test cases to verify your implementation:
+
+1. Single-line Comments Test
+
+```cpp
+// Basic single-line comment
+int x = 5;  // End-of-line comment
+// TODO: Implement feature
+// FIXME: Fix this bug
+```
+
+2. Multi-line Comments Test
+
+```cpp
+/* This is a multi-line comment
+   that spans several lines and
+   provides detailed explanation */
+
+/* Nested comments are not allowed:
+   /* This will cause an error */
+   This is still part of first comment */
+```
+
+3. Documentation Comments Test
+
+```cpp
+/**
+ * @brief Calculate area of rectangle
+ * @param length The length of rectangle
+ * @param width The width of rectangle
+ * @return The area of rectangle
+ */
+double calculateArea(double length, double width) {
+    return length * width;
+}
+```
+
+4. Class Documentation Test
+
+```cpp
+/**
+ * @class Rectangle
+ * @brief Represents a rectangle shape
+ * 
+ * This class provides functionality to:
+ * - Calculate area
+ * - Calculate perimeter
+ * - Compare with other rectangles
+ */
+class Rectangle {
+    // Class implementation
+};
+```
+
+5. Function Documentation Test
+
+```cpp
+/**
+ * @brief Get student grade
+ * @param score Student's numeric score
+ * @return char Letter grade (A-F)
+ * @throws std::invalid_argument If score is negative
+ */
+char getGrade(int score) {
+    // Function implementation
+}
+```
+
+6. Variable Documentation Test
+
+```cpp
+class Student {
+private:
+    int id;        ///< Unique identifier
+    string name;   ///< Full name of student
+    double gpa;    ///< Current GPA (0.0-4.0)
+};
+```
+
+7. Deprecated Code Documentation
+
+```cpp
+/**
+ * @deprecated Use newFunction() instead.
+ * This function will be removed in version 2.0
+ */
+void oldFunction() {
+    // Function implementation
+}
+```
+
+Try these test cases to verify:
+- Comment syntax correctness
+- Documentation completeness
+- Doxygen compatibility
+- Code readability
+- Documentation style consistency
+
 ## Understanding Documentation
 
 ### Types of Comments

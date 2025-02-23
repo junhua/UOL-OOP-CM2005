@@ -173,6 +173,95 @@ int main() {
 }
 ```
 
+### Test Cases
+Here are some test cases to verify your implementation:
+
+1. Basic Scope Test
+
+```
+Expected Output:
+Outside any block: x = 5
+Inside first block: x = 5, y = 10
+Inside second block: x = 5, y = 10, z = 15
+Back to first block: x = 5, y = 10
+Back to main scope: x = 5
+```
+
+2. Variable Shadowing Test
+
+```
+Code:
+int main() {
+    int x = 5;
+    {
+        int x = 10;  // Shadows outer x
+        std::cout << "Inner x: " << x << std::endl;
+    }
+    std::cout << "Outer x: " << x << std::endl;
+}
+
+Expected Output:
+Inner x: 10
+Outer x: 5
+```
+
+3. Scope Error Test
+
+```
+Code:
+int main() {
+    {
+        int y = 10;
+    }
+    std::cout << y << std::endl;  // Error: y is out of scope
+
+Expected Output:
+Compilation error: 'y' was not declared in this scope
+```
+
+4. Block Nesting Test
+
+```
+Code:
+int main() {
+    int x = 1;
+    {
+        int y = x + 1;
+        {
+            int z = y + 1;
+            std::cout << x << y << z << std::endl;
+        }
+    }
+}
+
+Expected Output:
+123
+```
+
+5. Variable Lifetime Test
+
+```
+Code:
+int main() {
+    for (int i = 0; i < 2; i++) {
+        int temp = i;
+        std::cout << temp << std::endl;
+    }
+    // temp is not accessible here
+}
+
+Expected Output:
+0
+1
+```
+
+Try these test cases to verify:
+- Variable scope boundaries
+- Proper variable lifetime
+- Scope nesting behavior
+- Variable shadowing effects
+- Scope-related error handling
+
 ## Understanding Variable Scope
 
 ### Scope Rules

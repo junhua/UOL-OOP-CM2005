@@ -9,179 +9,299 @@ permalink: /tutorials/module2/part4-break-continue/
 
 # Part 4: Break and Continue Statements
 
-## Overview
-Break and continue statements provide additional control over loop execution. They allow you to exit a loop early or skip to the next iteration based on certain conditions.
+## Learning Objectives
+- Master the usage of break and continue statements
+- Understand when to use each control statement
+- Learn proper loop control patterns
+- Implement robust error handling
+- Practice nested loop control
 
-## Break Statement
+## Introduction
+Loop control statements enhance your ability to manage program flow within loops. The `break` and `continue` statements provide precise control over loop execution, allowing you to exit loops early or skip specific iterations. Understanding these statements is crucial for writing efficient and maintainable code. This part explores several key concepts:
 
-### Purpose
-- Immediately exits the current loop or switch statement
-- Execution continues at the first statement after the loop/switch
-- Can be used in for, while, do-while loops, and switch statements
+1. **Break Statement Usage**:
+   - Early loop termination
+   - Switch statement control
+   - Search operations
+   - Error handling
+   - Resource cleanup
 
-### Basic Syntax
-```cpp
-while (condition) {
-    if (exit_condition) {
-        break;  // Exit loop immediately
-    }
-    // Loop code
-}
-```
+2. **Continue Statement Applications**:
+   - Input validation
+   - Data filtering
+   - Iteration control
+   - Performance optimization
+   - Code organization
 
-### Example
-```cpp
-// Print numbers until we find a multiple of 7
-for (int i = 1; i <= 20; i++) {
-    cout << i << " ";
-    if (i % 7 == 0) {
-        cout << endl << "Found multiple of 7!";
-        break;
-    }
-}
-```
+3. **Control Flow Patterns**:
+   - Nested loop control
+   - Error recovery
+   - State management
+   - Buffer handling
+   - User feedback
 
-## Continue Statement
+Understanding these concepts will help you write more efficient and cleaner code by properly controlling program flow and handling special cases effectively. Through practical examples, you'll learn how to use these statements to create robust and maintainable programs.
 
-### Purpose
-- Skips the rest of the current iteration
-- Jumps to the next iteration of the loop
-- Can only be used in loops (not in switch statements)
+## Implementation Guide
 
-### Basic Syntax
-```cpp
-while (condition) {
-    if (skip_condition) {
-        continue;  // Skip to next iteration
-    }
-    // Loop code
-}
-```
+You'll find the starter code in `Tutorials/Module02/Part4/break_continue_starter.cpp` and can compare your implementation with the completed version in `Tutorials/Module02/Part4/break_continue.cpp`.
 
-### Example
-```cpp
-// Print only odd numbers from 1 to 10
-for (int i = 1; i <= 10; i++) {
-    if (i % 2 == 0) {
-        continue;  // Skip even numbers
-    }
-    cout << i << " ";
-}
-```
+### Step 1: Start with the Template
+1. Open the starter code file `Tutorials/Module02/Part4/practice_break_continue_starter.cpp`
+2. You'll see the following template:
 
-## When to Use Break vs Continue
-
-### Use Break When:
-- You need to exit a loop early
-- You've found what you're looking for
-- An error condition occurs
-- You want to implement an exit condition
-
-### Use Continue When:
-- You want to skip specific iterations
-- You need to avoid nested if statements
-- You want to filter out certain cases
-- Processing should continue with next item
-
-## Practice Exercise
-
-Create a program that:
-1. Asks user for numbers until they enter 0
-2. Skips negative numbers (using continue)
-3. Exits if sum exceeds 100 (using break)
-4. Prints the final sum and count of valid numbers
-
-Solution:
 ```cpp
 #include <iostream>
+#include <string>
+#include <limits>
 using namespace std;
 
 int main() {
-    int number;
-    int sum = 0;
-    int count = 0;
-    
-    cout << "Enter numbers (0 to stop):" << endl;
-    
-    while (true) {
-        cout << "Enter a number: ";
-        cin >> number;
-        
-        // Exit condition
-        if (number == 0) {
-            break;
-        }
-        
-        // Skip negative numbers
-        if (number < 0) {
-            cout << "Negative number skipped" << endl;
-            continue;
-        }
-        
-        sum += number;
-        count++;
-        
-        // Check if sum exceeds 100
-        if (sum > 100) {
-            cout << "Sum exceeded 100!" << endl;
-            break;
-        }
-    }
-    
-    cout << "Final sum: " << sum << endl;
-    cout << "Valid numbers entered: " << count << endl;
+    // TODO: Declare validation constants
+    // TODO: Implement input collection loop
+    // TODO: Add validation checks with continue
+    // TODO: Add termination check with break
+    // TODO: Process and display results
     
     return 0;
 }
 ```
 
-## Common Use Cases
+### Step 2: Add Constants and Variables
+First, let's set up our program's configuration:
 
-### Early Exit Pattern
 ```cpp
-while (true) {
-    // Process data
-    if (error_condition) {
-        break;  // Exit on error
+    const int MAX_ENTRIES = 5;
+    const int MIN_LENGTH = 3;
+    const string SENTINEL = "quit";
+    
+    string validEntries[MAX_ENTRIES];
+    int entryCount = 0;
+```
+
+### Step 3: Display Instructions
+Add clear user instructions:
+
+```cpp
+    cout << "Enter up to " << MAX_ENTRIES << " text entries" << endl;
+    cout << "Rules:" << endl;
+    cout << "- Minimum " << MIN_LENGTH << " characters" << endl;
+    cout << "- No spaces allowed" << endl;
+    cout << "- Enter '" << SENTINEL << "' to stop" << endl;
+```
+
+### Step 4: Implement Main Loop
+Create the main input processing loop:
+
+```cpp
+    while (entryCount < MAX_ENTRIES) {
+        string input;
+        cout << "\nEntry " << (entryCount + 1) << ": ";
+        cin >> input;
+        
+        // Process input here
     }
+```
+
+### Step 5: Add Break Condition
+Implement the sentinel check using break:
+
+```cpp
+        // Check for sentinel
+        if (input == SENTINEL) {
+            cout << "Input terminated by user" << endl;
+            break;  // Exit loop when sentinel is entered
+        }
+```
+
+### Step 6: Add Continue Conditions
+Implement validation using continue:
+
+```cpp
+        // Validate length
+        if (input.length() < MIN_LENGTH) {
+            cout << "Too short! Must be at least " << MIN_LENGTH << " characters" << endl;
+            continue;  // Skip to next iteration
+        }
+        
+        // Check for spaces
+        if (input.find(' ') != string::npos) {
+            cout << "Spaces not allowed!" << endl;
+            continue;  // Skip to next iteration
+        }
+```
+
+### Step 7: Store Valid Data
+Add code to store and confirm valid entries:
+
+```cpp
+        // Store valid entry
+        validEntries[entryCount++] = input;
+        cout << "Entry accepted" << endl;
+```
+
+### Step 8: Display Results
+Add the final results display:
+
+```cpp
+    // Display results
+    cout << "\nValid entries collected: " << entryCount << endl;
+    for (int i = 0; i < entryCount; i++) {
+        cout << (i + 1) << ": " << validEntries[i] << endl;
+    }
+```
+
+### Final Code
+Here's the complete implementation:
+
+```cpp
+#include <iostream>
+#include <string>
+#include <limits>
+using namespace std;
+
+int main() {
+    const int MAX_ENTRIES = 5;
+    const int MIN_LENGTH = 3;
+    const string SENTINEL = "quit";
+    
+    string validEntries[MAX_ENTRIES];
+    int entryCount = 0;
+    
+    cout << "Enter up to " << MAX_ENTRIES << " text entries" << endl;
+    cout << "Rules:" << endl;
+    cout << "- Minimum " << MIN_LENGTH << " characters" << endl;
+    cout << "- No spaces allowed" << endl;
+    cout << "- Enter '" << SENTINEL << "' to stop" << endl;
+    
+    while (entryCount < MAX_ENTRIES) {
+        string input;
+        cout << "\nEntry " << (entryCount + 1) << ": ";
+        cin >> input;
+        
+        // Check for sentinel
+        if (input == SENTINEL) {
+            cout << "Input terminated by user" << endl;
+            break;
+        }
+        
+        // Validate length
+        if (input.length() < MIN_LENGTH) {
+            cout << "Too short! Must be at least " << MIN_LENGTH << " characters" << endl;
+            continue;
+        }
+        
+        // Check for spaces
+        if (input.find(' ') != string::npos) {
+            cout << "Spaces not allowed!" << endl;
+            continue;
+        }
+        
+        // Store valid entry
+        validEntries[entryCount++] = input;
+        cout << "Entry accepted" << endl;
+    }
+    
+    // Display results
+    cout << "\nValid entries collected: " << entryCount << endl;
+    for (int i = 0; i < entryCount; i++) {
+        cout << (i + 1) << ": " << validEntries[i] << endl;
+    }
+    
+    return 0;
 }
 ```
 
-### Filtering Pattern
-```cpp
-for (int i = 0; i < size; i++) {
-    if (!isValid(data[i])) {
-        continue;  // Skip invalid data
-    }
-    // Process valid data
-}
+### Test Cases
+
+1. Normal Input:
+```
+Input: hello world test quit
+Expected Output:
+Entry 1: hello (accepted)
+Entry 2: world (accepted)
+Entry 3: test (accepted)
+Entry 4: quit (program ends)
+Valid entries: 3
 ```
 
-### Search Pattern
-```cpp
-for (int i = 0; i < size; i++) {
-    if (data[i] == target) {
-        cout << "Found at position " << i << endl;
-        break;  // Stop searching
-    }
-}
+2. Validation Failures:
+```
+Input: hi no hello quit
+Expected Output:
+Entry 1: hi (too short)
+Entry 2: no (too short)
+Entry 3: hello (accepted)
+Entry 4: quit (program ends)
+Valid entries: 1
 ```
 
-## Common Mistakes to Avoid
-1. Using break/continue in nested loops (affects only innermost loop)
-2. Creating infinite loops with continue
-3. Using continue in do-while loops incorrectly
-4. Making code hard to follow with too many breaks/continues
-5. Forgetting to update loop variables before continue
+3. Maximum Entries:
+```
+Input: test1 test2 test3 test4 test5 test6
+Expected Output:
+Accepts first 5 entries
+Stops after MAX_ENTRIES reached
+Valid entries: 5
+```
+
+## Practice Exercises
+
+Start with the starter code in `Tutorials/Module02/Part4/practice_break_continue_starter.cpp`.
+
+### Exercise 1: Number Processor
+Create a program that:
+1. Processes numbers until a sentinel value
+2. Uses continue to skip invalid numbers
+3. Uses break when sum exceeds limit
+4. Validates input properly
+5. Displays running statistics
+
+### Exercise 2: Pattern Generator
+Implement a system that:
+1. Uses nested loops with break/continue
+2. Creates various patterns
+3. Handles user input
+4. Validates pattern size
+5. Provides clear output
+
+### Exercise 3: Data Filter
+Build a program that:
+1. Filters input based on criteria
+2. Uses continue for invalid data
+3. Uses break for completion
+4. Maintains statistics
+5. Shows filtered results
+
+You can compare your solutions with the completed examples in `Tutorials/Module02/Part4/practice_break_continue.cpp`.
 
 ## Best Practices
-1. Use break/continue sparingly
-2. Consider restructuring loops instead
-3. Document break/continue conditions clearly
-4. Be careful with nested loops
-5. Consider using functions instead of complex loop logic
+1. Use break for:
+   - Early loop termination
+   - Sentinel values
+   - Error conditions
+   - Search completion
+   - Resource cleanup
+
+2. Use continue for:
+   - Input validation
+   - Data filtering
+   - Skipping iterations
+   - Error recovery
+   - Performance optimization
+
+3. Code Organization:
+   - Clear conditions
+   - Proper comments
+   - Consistent style
+   - Error handling
+   - Buffer management
 
 ## Next Steps
-- Try the practice exercise
-- Experiment with break and continue
-- Move on to [Part 5: Simple Program Examples]({{ site.baseurl }}/tutorials/module2/part5-examples)
+1. Complete all practice exercises
+2. Test with various inputs
+3. Handle edge cases
+4. Review error handling
+5. Move on to [Part 5: Simple Program Examples]({{ site.baseurl }}/tutorials/module2/part5-examples)
+
+Remember that while break and continue are powerful tools, they should be used judiciously. Clear code structure and proper documentation are essential when using these control flow statements.

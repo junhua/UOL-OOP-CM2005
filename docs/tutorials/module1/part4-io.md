@@ -242,6 +242,118 @@ int main() {
 }
 ```
 
+### Test Cases
+Here are some test cases to verify your implementation:
+
+1. Valid Input Test
+
+```
+Input:
+Name: John Smith
+Age: 25
+Height: 1.75
+
+Expected Output:
+--- Personal Information ---
+Name:          John Smith
+Age:           25 years
+Height:        1.75 meters
+Height (cm):   175 cm
+```
+
+2. Invalid Age Test
+
+```
+Input:
+Name: Jane Doe
+Age: -5
+Height: not tested (program exits)
+
+Expected Output:
+Invalid age entered
+```
+
+3. Invalid Height Test
+
+```
+Input:
+Name: Bob Wilson
+Age: 30
+Height: -1.5
+
+Expected Output:
+Invalid height. Please enter a number between 0 and 3.
+```
+
+4. Buffer Handling Test
+
+```
+Input:
+Name: Alice Brown
+Age: 20abc
+Height: not tested (program clears buffer)
+
+Expected Output:
+Invalid age. Please enter a number between 1 and 150.
+(Program should clear buffer and allow retry)
+```
+
+5. Name with Spaces Test
+
+```
+Input:
+Name: Mary Jane Wilson
+Age: 28
+Height: 1.65
+
+Expected Output:
+--- Personal Information ---
+Name:          Mary Jane Wilson
+Age:           28 years
+Height:        1.65 meters
+Height (cm):   165 cm
+```
+
+6. Formatting Test
+
+```
+Input:
+Name: Tom
+Age: 45
+Height: 1.8234
+
+Expected Output:
+--- Personal Information ---
+Name:          Tom
+Age:           45 years
+Height:        1.82 meters
+Height (cm):   182 cm
+```
+
+7. Maximum Values Test
+
+```
+Input:
+Name: Test Maximum
+Age: 150
+Height: 2.99
+
+Expected Output:
+--- Personal Information ---
+Name:          Test Maximum
+Age:           150 years
+Height:        2.99 meters
+Height (cm):   299 cm
+```
+
+Try these test cases to verify:
+- Input validation
+- Buffer handling
+- Text formatting
+- Numeric precision
+- Error messages
+- Edge cases
+
 ## Understanding I/O Operations
 
 ### Input Stream (cin)

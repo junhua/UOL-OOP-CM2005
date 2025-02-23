@@ -197,6 +197,96 @@ int main() {
 }
 ```
 
+### Test Cases
+Here are some test cases to verify your implementation:
+
+1. Basic Data Type Values
+
+```
+Code:
+int age = 25;
+double price = 19.99;
+char grade = 'A';
+bool isStudent = true;
+
+Expected Output:
+Integer (age): 25
+Double (price): 19.99
+Character (grade): A
+Boolean (isStudent): 1
+```
+
+2. Type Conversion
+
+```
+Code:
+double height = 1.85;
+int heightCm = (int)(height * 100);
+
+Expected Output:
+Height in meters: 1.85
+Height in centimeters: 185
+```
+
+3. Size of Types
+
+```
+Expected Output:
+Size of int: 4 bytes
+Size of double: 8 bytes
+Size of char: 1 bytes
+Size of bool: 1 bytes
+```
+
+4. Integer Range
+
+```
+Expected Output:
+Minimum int value: -2147483648
+Maximum int value: 2147483647
+```
+
+5. Floating Point Precision
+
+```
+Code:
+float f = 3.14159f;
+double d = 3.14159;
+
+Expected Output:
+float: 3.14159
+double: 3.14159
+```
+
+6. Type Overflow Test
+
+```
+Code:
+short s = 32767;  // Maximum short value
+s = s + 1;        // Overflow
+
+Expected Output:
+-32768            // Wraps around to minimum value
+```
+
+7. Character Type Test
+
+```
+Code:
+char c = 65;
+std::cout << c << std::endl;
+
+Expected Output:
+A                 // ASCII value 65 is 'A'
+```
+
+Try these test cases to verify:
+- Proper initialization of different types
+- Type conversion behavior
+- Size and range limitations
+- Overflow handling
+- Type representation
+
 ## Understanding Data Types
 
 ### Integer Types

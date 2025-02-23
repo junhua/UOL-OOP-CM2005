@@ -94,6 +94,62 @@ int main() {
 }
 ```
 
+### Test Cases
+Here are some test cases to verify your implementation:
+
+1. Basic Output
+
+```
+Expected Output:
+Hello, C++!
+```
+
+2. Return Value Check
+
+```
+Command to check return value:
+echo $?
+
+Expected Output:
+0
+```
+
+3. Compilation Test
+
+```
+Command:
+g++ hello.cpp -o hello
+
+Expected Output:
+(No output indicates successful compilation)
+```
+
+4. Missing Semicolon Test
+
+```
+Code:
+std::cout << "Hello, C++!" << std::endl    // Missing semicolon
+
+Expected Output:
+Compilation error: expected ';' before 'return'
+```
+
+5. Incorrect Include Test
+
+```
+Code:
+#include "iostream"    // Wrong syntax for system header
+
+Expected Output:
+Compilation error: iostream: No such file or directory
+```
+
+Try these test cases to ensure your program:
+- Compiles successfully
+- Outputs the correct message
+- Returns proper value
+- Handles common errors appropriately
+
 ### Understanding Each Component
 1. `#include <iostream>`: 
    - Includes the input/output stream library
