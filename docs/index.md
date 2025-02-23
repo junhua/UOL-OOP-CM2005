@@ -9,24 +9,26 @@ permalink: /
 
 Welcome to the CM2005 Object-Oriented Programming course. This site contains all the materials you'll need for the course, including tutorials, labs, and project guides.
 
-## Course Components
+## Outline
 
 ### 📚 Tutorials
-Learn essential C++ and Object-Oriented Programming concepts through our structured modules:
+The tutorial modules are self-contained materials that facilitate your learning of essential C++ and Object-Oriented Programming concepts.
 
+#### Basic Topics
 - [Module 1: Introduction to Programming and C++]({{ site.baseurl }}/tutorials/module1)
 - [Module 2: Control Flow]({{ site.baseurl }}/tutorials/module2)
 - [Module 3: Functions]({{ site.baseurl }}/tutorials/module3)
 - [Module 4: Collections and Strings]({{ site.baseurl }}/tutorials/module4)
 - [Module 5: Classes and Objects]({{ site.baseurl }}/tutorials/module5)
+
+#### Advanced Topics
 - [Module 6: Encapsulation]({{ site.baseurl }}/tutorials/module6)
 - [Module 7: Inheritance]({{ site.baseurl }}/tutorials/module7)
 - [Module 8: Polymorphism]({{ site.baseurl }}/tutorials/module8)
 - [Module 9: Pointers and Dynamic Memory]({{ site.baseurl }}/tutorials/module9)
-- [Module 10: Advanced Topics]({{ site.baseurl }}/tutorials/module10)
 
 ### 🔬 Labs
-Build two complete applications through hands-on lab exercises:
+The lab topics follow official UOL material, but re-written for readability.
 
 #### MerkelRex (Weather Prediction App)
 - [Topic 1: Basic Setup]({{ site.baseurl }}/labs/topic1)
@@ -43,7 +45,7 @@ Build two complete applications through hands-on lab exercises:
 - [Topic 10: Final Integration]({{ site.baseurl }}/labs/topic10)
 
 ### 📝 Projects
-Complete two major assignments that demonstrate your understanding:
+The Projects section aims to provide some hints and samples to help you pass or ace both assignments.
 
 - [Midterm Project: Weather Prediction App]({{ site.baseurl }}/projects/midterm)
   - Process weather data
@@ -55,7 +57,10 @@ Complete two major assignments that demonstrate your understanding:
   - Implement professional DJ features
   - Create custom GUI components
 
-## Resources
+### Ready to begin?
+
+
+<!-- ## Resources
 
 - [Project Requirements]({{ site.baseurl }}/docs/requirements)
 - [Development Setup Guide]({{ site.baseurl }}/docs/setup)
@@ -73,4 +78,4 @@ Complete two major assignments that demonstrate your understanding:
 
 - Check the [FAQ]({{ site.baseurl }}/docs/faq) for common questions
 - Review the [troubleshooting guide]({{ site.baseurl }}/docs/troubleshooting)
-- Explore [sample projects]({{ site.baseurl }}/docs/samples) for inspiration
+- Explore [sample projects]({{ site.baseurl }}/docs/samples) for inspiration -->

@@ -1,68 +1,215 @@
 ---
 layout: default
-title: Part 1 - Welcome to C++
+title: Part 1 - Welcome to C++ and Object-Oriented Programming
 nav_order: 1
-parent: Module 1
+parent: Module 1 - Introduction to Programming and C++
 grand_parent: Tutorials
 permalink: /tutorials/module1/part1-welcome
 ---
 
-# Part 01: Welcome to C++ and Object-Oriented Programming
+# Part 1: Welcome to C++ and Object-Oriented Programming
 
-## Learning Objectives
-- Understand what C++ is and its role in software development
-- Learn about Object-Oriented Programming concepts
-- Setup your development environment
-- Write your first C++ program
+## Overview
+In this part, you'll set up your C++ development environment and write your first program. We'll use practical examples and exercises to help you understand the basics of C++ programming.
 
-## Introduction
-Welcome to C++ programming! Think of learning C++ like learning a new language - just as you use English to communicate with people, you'll use C++ to communicate with computers. Object-Oriented Programming (OOP) is like organizing your thoughts and instructions in a way that mirrors real-world objects and their interactions.
+## Environment Setup
 
-## Core Concepts
+### 1. Install a C++ Compiler
+To begin programming in C++, you'll need to install a compiler appropriate for your operating system:
+- Windows: Install MinGW or Visual Studio Community Edition
+- macOS: Install Xcode Command Line Tools
+- Linux: Install g++ through your system's package manager
 
-### 1. What is C++?
-- A powerful programming language
-- Used for system software, games, and applications
-- Combines low-level control with high-level features
-- Supports multiple programming paradigms
+### 2. Setup IDE/Editor
+1. Download and install Visual Studio Code from [code.visualstudio.com](https://code.visualstudio.com)
+2. Install the C/C++ extension:
+   - Open VS Code
+   - Click the Extensions icon in the sidebar (or press Ctrl+Shift+X)
+   - Search for "C/C++"
+   - Install the Microsoft C/C++ extension
 
-### 2. Object-Oriented Programming
-- A way of organizing code around objects
-- Objects combine data and functions
-- Makes code more organized and reusable
-- Models real-world relationships
+### 3. Verify Setup
+Open your terminal or command prompt and run:
 
-### 3. Development Environment
-- Code editor or IDE
-- Compiler
-- Debugger
-- Basic tools and setup
+```bash
+g++ --version  # Check compiler
+code --version # Check VS Code
+```
 
-## Practice Exercise
-1. Hello World Program
-   ```cpp
-   #include <iostream>
-   
-   int main() {
-       std::cout << "Hello, World!" << std::endl;
-       return 0;
-   }
-   ```
-   - Requirements: Create and run this basic program
-   - Understand each line's purpose
-   - Experiment with different messages
+## Your First C++ Program
 
-## Common Pitfalls
-- Forgetting semicolons
-- Missing brackets
-- Incorrect file extensions
-- Compiler errors understanding
+### Step 1: Create Your First File
+1. Open the starter code file `Tutorials/Module01/Part1/hello_starter.cpp`
+2. You'll see the following template:
 
-## Further Reading
-- C++ language history
-- Modern C++ features
-- OOP principles in depth
-- Development environment tips
+```cpp
+// TODO: Add necessary include
+// TODO: Add main function
+// TODO: Print "Hello, C++!"
+// TODO: Return appropriate value
+```
+
+### Step 2: Add the Include Directive
+1. Every C++ program that uses input/output needs the iostream header
+2. Add this line at the top of your file:
+
+```cpp
+#include <iostream>
+```
+
+### Step 3: Add the Main Function
+1. Every C++ program needs a main function - it's where execution begins
+2. Add the main function declaration:
+
+```cpp
+int main() {
+    
+}
+```
+### Step 4: Add Output Statement
+1. Use cout to print "Hello, C++!"
+2. Add this line inside main:
+
+```cpp
+    std::cout << "Hello, C++!" << std::endl;
+```
+
+### Step 5: Add Return Statement
+1. Since main returns an int, we need a return statement
+2. Add this as the last line in main:
+
+```cpp
+    return 0;
+```
+
+### Final Code
+Your completed program should look like this (you can compare with `Tutorials/Module01/Part1/hello.cpp`):
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, C++!" << std::endl;
+    return 0;
+}
+```
+
+### Understanding Each Component
+1. `#include <iostream>`: 
+   - Includes the input/output stream library
+   - Needed for cout and endl
+
+2. `int main()`: 
+   - The program's entry point
+   - Must return an integer value
+
+3. `std::cout << "Hello, C++!"`:
+   - std::cout is the standard output stream
+   - << is the output operator
+   - Text in quotes is the string to output
+
+4. `<< std::endl`:
+   - Adds a newline
+   - Flushes the output buffer
+
+5. `return 0`:
+   - Returns success status to operating system
+   - 0 indicates successful execution
+
+## Building and Running
+
+### Compile Your Program
+
+```bash
+g++ hello.cpp -o hello
+```
+This command:
+- Invokes the C++ compiler (g++)
+- Compiles hello.cpp
+- Creates an executable named hello (-o hello)
+
+### Run Your Program
+
+```bash
+./hello
+```
+You should see:
+
+```
+Hello, C++!
+```
+
+## Common Issues and Solutions
+
+### 1. Missing Semicolons
+
+```cpp
+std::cout << "Hello" << std::endl   // Error: missing ;
+```
+Fix: Add semicolon at the end of statements:
+
+```cpp
+std::cout << "Hello" << std::endl;  // Correct
+```
+
+### 2. Incorrect Include
+
+```cpp
+#include "iostream"   // Wrong for system headers
+```
+Fix: Use angle brackets for system headers:
+
+```cpp
+#include <iostream>   // Correct
+```
+
+### 3. Mismatched Brackets
+
+```cpp
+int main() {
+    std::cout << "Hello";
+    // Missing closing brace
+```
+Fix: Ensure each { has a matching }:
+
+```cpp
+int main() {
+    std::cout << "Hello";
+}  // Correct
+```
+
+## Practice Exercises
+
+### 1. Basic Output
+Modify your program to:
+1. Print your name on one line
+2. Print your age on the next line
+3. Print a greeting that uses both pieces of information
+
+### 2. Error Recognition
+Fix these common errors in the code:
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Line 1" << std::endl
+    std::cout << "Line 2" << std::endl;
+    return 0
+}
+```
+
+### 3. Program Enhancement
+Enhance your program to:
+1. Add a welcome message
+2. Include multiple lines of output
+3. Use different types of text formatting
 
 ## Next Steps
-Continue to [Part 2: Basic Syntax]({{ site.baseurl }}/tutorials/module1/part2-syntax) to learn about C++ syntax fundamentals.
+After completing this part:
+1. Make sure your program compiles and runs correctly
+2. Try the practice exercises
+3. Compare your solutions with the final version
+4. Move on to Part 2 to learn about program structure
+
+[Continue to Part 2: Basic C++ Program Structure]({{ site.baseurl }}/tutorials/module1/part2-program-structure)
